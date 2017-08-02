@@ -28,7 +28,7 @@ class procesarDatos extends Conexion {
 	
 	public function seleccionarVideos($id_v)
 	{
-		$sql = "SELECT *FROM videos  
+		$sql = "SELECT * FROM videos  
 				WHERE id_v = '$id_v'";
 
 		$sentencia = $this->conn->prepare($sql);
@@ -46,10 +46,6 @@ class procesarDatos extends Conexion {
 		$this->conn = null;
 	}
 
-	public function Actualizar()
-	{
-
-	}
 }
 
 

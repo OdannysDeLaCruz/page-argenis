@@ -165,25 +165,49 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',3);
 					</section>
 
 				</section>
+			<?php } ?>
 				<section class="col-md-6 videos-cinco-musicos text-center">
+
+<?php 
+$misVideos = $Objeto->seleccionarVideos(3);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
 					
-					<label>Nombre del video</label><br>		
-					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="Titulo"><br>
+					<label>Nombre del video 1</label><br>		
+					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
+
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-cinco-musicos-1 form-control" name="url-video-cinco-musicos-1" value="Url"><br><br>
-					
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="Titulo"><br>
+					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(4);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
+					<label>Nombre del video 2</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
+
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-cinco-musicos-2 form-control" name="url-video-cinco-musicos-2" value="Url"><br><br>
-					
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="Titulo"><br>
+					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(5);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
+					<label>Nombre del video 3</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-cinco-musicos-3 form-control" name="url-video-cinco-musicos-3" value="Url"><br>
+					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
+
+
 			
 				</section>
-			<?php } ?>
 			</section> <!-- FIN CINCO MUSICOS -->
 
 
@@ -196,22 +220,42 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',4);
 
 				<section class="col-md-6 videos-grupo-completo text-center">
 
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-grupo-completo-1 form-control" name="titulo-video-grupo-completo-1" value="Titulo"><br>
+					<?php 
+$misVideos = $Objeto->seleccionarVideos(6);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+					
+					<label>Nombre del video 1</label><br>		
+					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-grupo-completo-1 form-control" name="url-video-grupo-completo-1" value="Url"><br><br>
+					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
-					<label>Nombre del video</label><br>
-					<input type="text" class="titulo-video-grupo-completo-2 form-control" name="titulo-video-grupo-completo-2" value="Titulo"><br>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(7);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
 
-					<label>Url del video</label><br>	
-					<input type="text" class="url-video-grupo-completo-2 form-control" name="url-video-grupo-completo-2" value="Url"><br><br>
+					<label>Nombre del video 2</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
 
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-grupo-completo-3 form-control" name="titulo-video-grupo-completo-3" value="Titulo"><br>
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-grupo-completo-3 form-control" name="url-video-grupo-completo-3" value="Url"><br>
+					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(8);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
+					<label>Nombre del video 3</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+
+					<label>Url del video</label><br>
+					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
 
 				</section>
 				<section class="col-md-6 texto-grupo-completo text-center">
@@ -266,82 +310,138 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',5);
 				</section>
 				<section class="col-md-6 videos-vallenato-guitarra text-center">
 
-					<label>Nombre del video</label><br>		
-					<input type="text" class="titulo-video-vallenato-guitarra-1 form-control" name="titulo-video-vallenato-guitarra-1" value="Titulo"><br>
+					<?php 
+$misVideos = $Objeto->seleccionarVideos(9);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+					
+					<label>Nombre del video 1</label><br>		
+					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-vallenato-guitarra-1 form-control" name="url-video-vallenato-guitarra-1" value="Url"><br><br> 
+					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-vallenato-guitarra-2 form-control" name="titulo-video-vallenato-guitarra-2" value="Titulo"><br>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(10);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
+					<label>Nombre del video 2</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<input type="text" class="url-video-vallenato-guitarra-2 form-control" name="url-video-vallenato-guitarra-2" value="Url"><br><br>	
+					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
-					<label>Nombre del video</label><br>	
-					<input type="text" class="titulo-video-vallenato-guitarra-3 form-control" name="titulo-video-vallenato-guitarra-3" value="Titulo"><br>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(11);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
 
-					<label>Url del video</label><br>	
-					<input type="text" class="url-video-vallenato-guitarra-3 form-control" name="url-video-vallenato-guitarra-3" value="Url"><br>
+					<label>Nombre del video 3</label><br>	
+					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+
+					<label>Url del video</label><br>
+					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+
+					<?php } ?>
+
 				</section>
 			<?php } ?>
 			</section> <!-- FIN VALLENATO CON GUITARRA -->
 
 			<!-- SECCION MAS TEMAS -->
+			<section class="mas-temas">
+				<section class="row">
 <?php 
 $misDatos = $Objeto->seleccionar('contenido','id_c',6);
  ?>
-			<section class="mas-temas">
 			<?php foreach ($misDatos as $datos) { ?>
-				<section class="row">
 
 					<input type="hidden" name="id_mas_temas" value="6">
 					<br><h1><input type="text" class="titulo-mas-temas form-control" name="titulo-mas-temas" value="<?php echo $datos['titulo']; ?>"></h1><br><br>
+			<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(12);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
 
 					<section class="col-md-4">
 						<label>Titulo y Url del video 1</label>
-						<input type="text" class="titulo-video-mas-temas-1 form-control" name="titulo-video-mas-temas-1" value="video1">
-						<input type="text" class="url-video-mas-temas-1 form-control" 
-						name="url-video-mas-temas-1" value="url1">
+						<input type="text" class="titulo-video-mas-temas-1 form-control" name="titulo-video-mas-temas-1" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-1" cols="30" rows="3" class="url-video-mas-temas-1 form-control"><?php echo $videos['url']; ?></textarea>
+
 					</section>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(13);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
 					<section class="col-md-4">
-					<label>Titulo v Url del video 2</label>
-						<input type="text" class="titulo-video-mas-temas-2 form-control" name="titulo-video-mas-temas-2" value="video2">
-						<input type="text" class="url-video-mas-temas-2 form-control" 
-						name="url-video-mas-temas-2" value="url2">
+					<label>Titulo y Url del video 2</label>
+						<input type="text" class="titulo-video-mas-temas-2 form-control" name="titulo-video-mas-temas-2" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-2" cols="30" rows="3" class="url-video-mas-temas-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>
+						
 					</section>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(14);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
 					<section class="col-md-4">
-					<label>Titulo v Url del video 3</label>
-						<input type="text" class="titulo-video-mas-temas-3 form-control" name="titulo-video-mas-temas-3" value="video3">
-						<input type="text" class="url-video-mas-temas-3 form-control" 
-						name="url-video-mas-temas-3" value="url3">
+					<label>Titulo y Url del video 3</label>
+						<input type="text" class="titulo-video-mas-temas-3 form-control" name="titulo-video-mas-temas-3" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-3" cols="30" rows="3" class="url-video-mas-temas-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>
+						
 					</section>
+					<?php } ?>
+
 				</section>
 				<section class="row">
+<?php 
+$misVideos = $Objeto->seleccionarVideos(15);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
 					<section class="col-md-4">
-						<label>Titulo v Url del video 4</label>
-						<input type="text" class="titulo-video-mas-temas-4 form-control" name="titulo-video-mas-temas-4" value="video4">
-						<input type="text" class="url-video-mas-temas-4 form-control" 
-						name="url-video-mas-temas-4" value="url4">
+						<label>Titulo y Url del video 4</label>
+						<input type="text" class="titulo-video-mas-temas-4 form-control" name="titulo-video-mas-temas-4" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-4" cols="30" rows="3" class="url-video-mas-temas-4 form-control"><?php echo $videos['url']; ?></textarea><br><br>
+						
 					</section>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(16);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
 					<section class="col-md-4">
-					<label>Titulo v Url del video 5</label>
-						<input type="text" class="titulo-video-mas-temas-5 form-control" name="titulo-video-mas-temas-5" value="video5">
-						<input type="text" class="url-video-mas-temas-5 form-control" 
-						name="url-video-mas-temas-5" value="url5">
+					<label>Titulo y Url del video 5</label>
+						<input type="text" class="titulo-video-mas-temas-5 form-control" name="titulo-video-mas-temas-5" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-5" cols="30" rows="3" class="url-video-mas-temas-5 form-control"><?php echo $videos['url']; ?></textarea><br><br>
+						
 					</section>
+					<?php } ?>
+<?php 
+$misVideos = $Objeto->seleccionarVideos(17);
+ ?>
+ 					<?php foreach ($misVideos as $videos) { ?>
+
 					<section class="col-md-4">
-					<label>Titulo v Url del video 6</label>
-						<input type="text" class="titulo-video-mas-temas-6 form-control" name="titulo-video-mas-temas-6" value="video6">
-						<input type="text" class="url-video-mas-temas-6 form-control" 
-						name="url-video-mas-temas-6" value="url6">
+					<label>Titulo y Url del video 6</label>
+						<input type="text" class="titulo-video-mas-temas-6 form-control" name="titulo-video-mas-temas-6" value="<?php echo $videos['titulo']; ?>">
+						<textarea name="url-video-mas-temas-6" cols="30" rows="3" class="url-video-mas-temas-6 form-control"><?php echo $videos['url']; ?></textarea><br><br>
+						
 					</section>
+					<?php } ?>
 				</section>	 
 				<section class="row cambiar-imagen-fondo-mas-temas">
 					<p>Cambiar imagen de fondo de esta seccion.</p>
 					<input type="file" class="imagen-mas-temas form-control" name="imagen-mas-temas">
-				</section>		
-			<?php } ?>	
+				</section>	
 			</section>
 			<!-- FIN MAS TEMAS -->
 

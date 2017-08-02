@@ -1,0 +1,384 @@
+/*Segunda obción título Argenis Contreras */
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+/*subtitulo Cantante, artista y compositor*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i');
+
+/*Fuente para titulos de formatos y texto en general*/
+@import url('https://fonts.googleapis.com/css?family=Noticia+Text');
+/*Fuente para seccion descripcion*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.col-xs-6,.col-sm-4,.col-md-2 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+header {
+	background-image: url("../img/fondo-header-2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	color: #fff;
+
+	width: 100%;
+	height: 400px;
+}
+header .titulo {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	height: 200px;
+	top: 20px;
+
+}
+.capa-oscura {
+	background: #000;
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	opacity: 0.6;
+	z-index: 0;
+}
+
+.titulo-subtitulo {
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+/*----ESTILOS PARA IMAGENES DE GALERIA----*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #111;
+}
+
+.galeria {
+  /*padding: 20px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.galeria__item {
+  width: 80%;
+  cursor: pointer;
+  background: red;
+  height: 300px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.galeria__item img{
+	width: 600px;
+	height: auto;
+}
+
+.modal__img {	
+	width: 70%;
+}
+
+@media (max-width:499px){
+  .galeria__item {
+    width: 90%;
+    margin: 5px;
+  }
+  .modal__img {	
+	width: 100%;
+  }
+  header, .capa-oscura {
+	height: 330px;
+  }
+
+}
+
+@media (min-width:500px) and (max-width: 700px) {
+  .galeria__item {
+    width: 40%;
+    margin: 5px;
+  }
+  .modal__img {	
+	width: 70%;
+  }
+}
+@media (min-width:701px) and (max-width: 900px)  {
+  .galeria__item {
+    width: 25%;
+    margin: 5px;
+  }
+  .modal__img {	
+	width: 70%;
+  }
+}
+@media (min-width: 901px)  {
+  .galeria__item {
+    width: 20%;
+    margin: 5px;
+  }
+  .modal__img {	
+	width: 70%;
+  }
+}
+html, body {
+	height: 100%;
+}
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  top: 0;
+  left: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__boton {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: monospace;
+  line-height: 50px;
+  text-align: center;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+/*---- FUENTES ------*/
+.fuente-playfair {
+	font-family: 'Playfair Display', serif;
+}
+.fuente-oleo-script {
+	font-family: 'Oleo Script', cursive;
+}
+header h1 {
+	font-family: 'Oleo Script', cursive;
+	font-size: 80px;
+	margin-bottom: 0px;
+}
+
+header .titulo h3 {
+	font-size: 30px;
+	margin-top: 30px;
+	font-family: 'Playfair Display', serif;
+}
+@media (max-width: 1000px){
+	
+	header .titulo h3 {
+		margin-top: 140px;
+	}
+	
+}
+header h4 {
+	font-size: 30px;
+	color: #fab005;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+footer section h4 {
+		font-size: 14px;
+		margin-right: 0;
+		margin-left: 0;
+}
+footer {
+	margin-top: 30px;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	font-family: 'Playfair Display', serif;
+	
+}
+footer section h4 {
+	font-size: 16px;
+}
+
+/*----- @MEDIAS -----------*/
+
+@media (min-width: 300px) and (max-width: 400px) {
+	header h1 {
+		font-size: 40px;
+		text-align: center;
+	}
+	header h4 {
+	font-size: 18px;
+	}
+	.imagenes section {
+		margin: auto;
+		height: 150px;
+		overflow: hidden;
+	}
+}
+@media (min-width: 401px) and (max-width: 600px) {
+	header h1 {
+		font-size: 45px;
+		text-align: center;
+	}
+	header h4 {
+	font-size: 24px;
+	}
+}
+@media (min-width: 601px) and (max-width: 800px) {
+	header h1 {
+		font-size: 60px;
+		text-align: center;
+	}
+	header h4 {
+	font-size: 24px;
+	}
+}
+
+/*ESTILOS DE MENU DE GALERIA*/
+
+.checkbox-btn-menu {
+	visibility: hidden;
+}
+label.glyphicon {
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+nav {
+	background: #15aabf;
+	width: 100%;
+	height: 60px;
+	margin-top: 40px;
+	/*text-align: center;*/
+
+	display: flex;
+	justify-content: center;
+}
+a {
+	text-decoration: none;
+}
+nav ul {
+	padding-left: 15px;
+	padding-top: 17px;
+}
+nav ul li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+	list-style: none;
+	font-size: 20px;	 
+}
+nav ul .active a{
+	color: #0A606C;
+
+}
+nav ul li > a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Playfair Display', serif;
+	margin-left: 0px;
+	border-bottom: hidden;
+
+}
+nav ul li > a:hover {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+nav ul .navegacion {
+	visibility: visible;
+}
+nav ul .menu-mobile {
+	float: right;
+	visibility: visible;
+}
+nav ul .menu-mobile p {
+	cursor: pointer;
+}
+@media (max-width: 1000px) {
+	
+	label.glyphicon {
+		display: block;
+		margin-right: 10px;
+		line-height: 50px;
+		padding: 0;
+	}
+	nav {
+		position: absolute;
+		justify-content: flex-end;
+	}
+	nav .ul-menu {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+		text-align: center;
+		background: #333;
+		display: block;
+
+		transform: translateX(-100%);
+		transition: all 0.3s;
+	}
+	#btn-menu:checked ~ .ul-menu {
+		transform: translateX(0%);
+
+	}
+	nav .ul-menu li {
+		display: block;
+		padding-bottom: 10px;
+	}
+}
+
+
+/*Boton ir arriba*/
+
+.boton_subir {
+	background: #E11616;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	right: 13px;
+	top: 89%;
+	z-index: 2000;
+	cursor: pointer;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	-webkit-box-shadow: 5px 3px 15px #000;
+	-moz-box-shadow: 5px 3px 15px #000;
+	box-shadow: 5px 3px 15px #000;
+	
+
+}
+.boton_subir > .glyphicon {
+	position: absolute;
+	font-size: 20px;
+	top: 15px;
+	left: 15px;
+	color: #fff;
+}

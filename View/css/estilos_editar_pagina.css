@@ -1,0 +1,485 @@
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*Bloque adminidtracion*/
+
+.bloque_administracion {
+	background: #23282d;
+	text-align: right;
+	padding-right: 20px;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.bloque_administracion .img-admin {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+	margin: 4px 10px 4px 0;
+	text-align: center;
+}
+.bloque_administracion img {
+	width: 100%;
+	height: 100%;
+}
+.menu {
+	float: right;
+	width: 80px;
+	height: 40px;
+	margin: 5px 0 4px 0;
+	line-height: 40px;
+}
+.bloque_administracion h5 {
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+}
+.glyphicon-chevron-down {
+	color: #fff;
+	font-size: 13px;
+}
+
+.contenido_principal {
+	margin-top: 50px;
+}
+/*----------------------*/
+/*Panel de control*/
+.panel-control {
+	background: #23282d;
+	position: fixed;
+	width: 15%;
+	float: left;
+	height: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.menu-panel-control {
+	z-index: 2;
+    padding: 50px 0 0 0;
+}
+.menu-panel-control ul {
+	width: 100%;
+	padding-left: 0px;
+	list-style: none;
+}
+.menu-panel-control li {
+	left: 20px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.menu-panel-control li:hover {
+	background: #09090C;
+	color: #0FCDFC;
+}
+.menu-panel-control .glyphicon {
+	margin-right: 10px;
+}
+.menu-panel-control a {
+	text-decoration: none;
+	color: #fff;
+}
+/*-----------------------*/
+
+/*Panel de edicion*/
+.panel-edicion {
+	background: #fff;
+	padding-top: 10px;
+	position: relative;
+	float: right;
+	width: 85%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/*------------------------*/
+
+/*Seccion Header*/
+.header {
+	background: green;
+	margin-top: 0;
+}
+.header p {
+	color: #fff;	
+}
+.titulo-header {
+	width: 500px;
+	height: 60px;
+	font-size: 40px;
+	text-align: right;
+	margin: auto;
+	padding: 20px 20px 20px 0;
+}
+.subtitulo-header {
+	width: 500px;
+	font-size: 18px;
+	text-align: right;
+	margin: auto;
+}
+.seccion-mensaje-header {
+	padding: 10px;
+}
+.mensaje-header {
+	width: 100%;
+	margin-top: 30px;
+	font-size: 17px;
+	font-family: lucida,arial,verdana;
+}
+.videos-header {
+	margin: 20px 0 20px 0;
+}
+.cambiar-imagen-header {
+	width: 500px;
+	margin: auto;
+	padding: 20px 0 20px 0;
+}
+.header input, .mensaje-header {
+	background: none;
+    border: none;
+    color: #fff;
+    box-shadow: none;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+}
+.mensaje-header {
+    border: 1px solid #fff;
+}
+/*-------------------*/
+
+/*Seccion de tipo de evento*/
+.tipo-evento {
+	background: #fff;
+	margin: 20px 0 20px 0;
+}
+.titulo-tipo-evento {
+	width: 600px;
+	text-align: center;
+	margin: auto;
+	font-size: 30px;
+}
+.mensaje-tipo-evento {
+	width:100%;
+	margin: auto;
+	font-size: 18px;
+}
+.tipo-evento input, .mensaje-tipo-evento {
+	background: none;
+    border: none;
+    color: #666;
+    box-shadow: none;
+}
+/*--------------------*/
+
+/*Seccion Cinco Musicos*/
+.cinco-musicos {
+	background: #5961F1;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+
+}
+.titulo-cinco-musicos {
+	font-size: 30px;
+	text-align: center;
+}
+.subtitulo-cinco-musicos {
+	font-size: 18px;
+	text-align: center;
+}
+.videos-cinco-musicos {
+	color: #fff;
+	text-align: left;
+}
+.videos-cinco-musicos > input,p {
+	font-size: 16px;
+	
+}
+.cinco-musicos input {
+	background: none;
+	border-top: none;
+	border-right: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    box-shadow: none;
+
+}
+/*----------------------*/
+
+/*Seccion grupo completo*/
+.grupo-completo {
+	background: #D83971;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.titulo-grupo-completo {
+	font-size: 30px;
+}
+.subtitulo-grupo-completo {
+	font-size: 18px;
+}
+.videos-grupo-completo {
+	color: #fff;
+	text-align: left;
+}
+.videos-grupo-completo > input,p {
+	font-size: 16px;
+}
+.grupo-completo input {
+	background: none;
+	border-top: none;
+	border-right: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    box-shadow: none;
+
+}
+/*----------------------------*/
+
+/*Seccion vallenato guitarra*/
+.vallenato-guitarra {
+	background: #CD5DE9;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.titulo-vallenato-guitarra {
+	font-size: 30px;
+}
+.subtitulo-vallenato-guitarra {
+	font-size: 18px;
+}
+.videos-vallenato-guitarra {
+	color: #fff;
+	text-align: left;
+}
+.videos-vallenato-guitarra > input,p {
+	font-size: 16px;
+}
+.vallenato-guitarra input {
+	background: none;
+	border-top: none;
+	border-right: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    box-shadow: none;
+
+}
+/*--------------------------*/
+/*Seccion mas temas*/
+.mas-temas {
+	/*padding: 5px;*/
+}
+.titulo-mas-temas {
+	width: 500px;
+	text-align: center;
+	color: #666;
+	font-size: 30px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+.mas-temas input{
+	background: none;
+	border-top: none;
+	border-right: none;
+    border-bottom: 1px solid #757070;
+    border-radius: 0;
+    color: #666;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+.mas-temas label {
+	color: #666
+}
+.cambiar-imagen-fondo-mas-temas {
+	margin: auto; 
+	margin-top: 40px;
+	padding: 10px;
+	background: #CDCCCC;
+	width: 500px;
+}
+
+/*---------------------------*/
+/*Seccion opinion clientes*/
+.opinion-clientes {
+	text-align: center;
+	background: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.titulo-opinion-clientes {
+	font-size: 30px;
+	width: 600px;
+	margin: auto;
+	text-align: center;
+}
+/*-------------------------*/
+
+.items-opi {
+	text-align: left;
+}
+
+/*seccion redes sociales*/
+.redes-sociales {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.titulo-red-social {
+	width: 600px;
+	margin: auto;
+	text-align: center;
+	font-size: 30px;
+	border: none;
+    border-bottom: 1px solid #757070;
+    border-radius: 0;
+	box-shadow: none;
+
+}
+
+/*-----------------------------*/
+/*cambiar imagen de fondo de las secciones */
+.cambiar-imagen-fondo{
+	margin-top: 40px;
+	padding: 10px;
+	background: #CDCCCC;
+}
+/*--------------------------------*/
+.seccion-numero-telefono {
+	margin: 10px 0 20px 0;
+	padding: 20px;
+}
+input.numero-telefono {
+	width: 300px;
+	margin: auto;
+}
+/*----------------------------------*/
+
+/*ESTILOS DE FOOTER DE PAGINA EDITAR_PAGINA*/
+footer {
+	text-align: center;
+	color: #fff;
+	background: #000;
+	font-family: 'Playfair Display', serif;
+	width: 100%;
+	margin-bottom: 0;
+
+}
+
+footer section h4 {
+	font-size: 16px;
+}
+/*-------------------------*/
+form .btn-enviar {
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	z-index: 3000;
+	width: 150px;
+} 
+/*form .btn-enviar {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 3000;
+	width: 160px;
+	height: 60px;
+	border-radius: none;
+	transition-property: left height,width,border-radius;
+	transition-duration: 0.4s,0.4s,0.4s, 0.4s;
+}
+form .btn-enviar:hover {
+
+	border: none;
+} 
+form .btn-enviar:focus {
+	left: 51px;
+	width: 60px; 
+	height: 60px;
+	border-radius:125px;
+
+}*/
+
+@media (min-width: 300px) and (max-width: 900px) {
+
+	.panel-control {
+		position: relative;
+		width: 100%;
+		height: 150px;
+	}
+	.menu-panel-control {
+		z-index: 2;
+		top: 100px;
+	    padding: 50px 0 0 0;
+	    text-align: center;
+
+	}
+	.panel-edicion {
+		background: #fff;
+		padding-top: 10px;
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.titulo-tipo-evento,
+	.titulo-opinion-clientes,
+	.titulo-red-social,
+	.titulo-header,
+	.subtitulo-header,
+	.mensaje-header,
+	.cambiar-imagen-header
+	 {
+
+		width:100%;
+	}
+	.seccion-mensaje-header {
+		padding: 0 0 20px 0;
+	}
+	.grupo-completo {
+		height: 900px;
+	}
+	
+	/*Cambio de posicion*/
+	.texto-grupo-completo {
+	
+		position: relative;
+		width: 100%;
+		margin-bottom: 20px;
+
+	}
+	.videos-grupo-completo {
+
+		position: absolute;
+		width: 97%;
+		margin-top: 350px;
+	}
+	.titulo-mas-temas {
+		width: 100%;
+	}
+	.cambiar-imagen-fondo-mas-temas {
+		margin: auto; 
+		margin-top: 40px;
+		padding: 10px;
+		background: #CDCCCC;
+		width: 100%;
+	}
+
+}

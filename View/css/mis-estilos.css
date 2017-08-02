@@ -1,0 +1,901 @@
+/*Segunda obciÃ³n tÃ­tulo Argenis Contreras */
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+/*subtitulo Cantante, artista y compositor*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i');
+
+/*Fuente para titulos de formatos y texto en general*/
+@import url('https://fonts.googleapis.com/css?family=Noticia+Text');
+/*Fuente para seccion descripcion*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+/*
+font-family: 'Dancing Script', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Playfair Display', serif;*/
+
+
+body {
+	background-image: url("../img/imagen-header.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	/*background-position:0 -100px;*/
+	z-index: 1;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+header {
+	width: 100%;
+	height: 800px;
+}
+header .titulo {
+	width: 100%;
+}
+/*Boton ir arriba*/ 
+
+.boton_subir {
+	background: #E11616;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	right: 13px;
+	top: 89%;
+	z-index: 2000;
+	cursor: pointer;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	-webkit-box-shadow: 5px 3px 15px #000;
+	-moz-box-shadow: 5px 3px 15px #000;
+	box-shadow: 5px 3px 15px #000;
+	
+
+}
+
+.boton_subir > .glyphicon {
+	position: absolute;
+	font-size: 20px;
+	top: 15px;
+	left: 15px;
+	color: #fff;
+}
+
+.descripcion {
+	margin-top: 0px;
+}
+.contacto {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding: 5px 10px 5px 0px;
+	margin-top: 0;
+	background: rgba(0,0,0,0.9);
+	width: 100%;
+} 
+.contacto img {
+	width: 30px;
+	margin-right: 10px;
+}
+.contacto p {
+	font-size: 19px;
+	width: 200px;
+	margin: auto;
+	display: inline;
+}
+.checkbox-btn-menu {
+	visibility: hidden;
+}
+label.glyphicon {
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+nav {
+	background: #15aabf;
+	width: 100%;
+	height: 60px;
+	margin-top: 40px;
+	/*text-align: center;*/
+
+	display: flex;
+	justify-content: center;
+}
+a {
+	text-decoration: none;
+}
+nav ul {
+	padding-left: 15px;
+	padding-top: 20px;
+}
+nav ul li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+	list-style: none;
+	font-size: 20px;	 
+}
+nav ul li > a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Playfair Display', serif;
+	margin-left: 0px;
+	border-bottom: hidden;
+
+}
+nav ul li > a:hover {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+nav ul .navegacion {
+	visibility: visible;
+}
+nav ul .menu-mobile {
+	float: right;
+	visibility: visible;
+}
+nav ul .menu-mobile p {
+	cursor: pointer;
+}
+@media (max-width: 1000px) {
+	
+	label.glyphicon {
+		display: block;
+		margin-right: 10px;
+		line-height: 50px;
+		padding: 0;
+	}
+	nav {
+		position: absolute;
+		justify-content: flex-end;
+	}
+	nav .ul-menu {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+		text-align: center;
+		background: #333;
+		display: block;
+
+		transform: translateX(-100%);
+		transition: all 0.3s;
+	}
+	#btn-menu:checked ~ .ul-menu {
+		transform: translateX(0%);
+
+	}
+	nav .ul-menu li {
+		display: block;
+		padding-bottom: 10px;
+	}
+	header .titulo {
+		width: 100%;
+		padding-top: 100px;
+	}
+}
+.container {
+	padding-right: 0px;
+    padding-left: 0px;
+}
+/******************************************/
+
+.foto-flotante {
+	width: 440px;
+	position: absolute;
+	top: 130px;
+	right:0;
+}
+.foto-flotante img {
+	width: 440px;
+	position: relative;
+	float: right;
+}
+.separador1 {
+	width: 90%;
+	margin-right: 0px;
+	background: #fff;
+}
+.separador2 {
+	height: 1px;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	background: #4D50D4;
+}
+
+
+/*---ESTILOS PARA DISEÃ‘O DE COLORES------*/
+
+.capa-oscura {
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+	z-index: -1;
+}
+
+header {
+	color: #fff;
+	height: auto;
+	padding-bottom: 20px;
+}
+.titulo-subtitulo {
+	padding-left : 0;
+	padding-right: 0;
+	margin-right : 10px;
+	margin-left  : 10px;
+}
+.contenido-principal {
+	background: #fff;
+}
+.presentacion-formatos {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.videos-bienvenidas section {
+	margin-top: 40px;
+	border-bottom: 1px solid #fff;	
+}
+.seccion-obciones {
+	background: #464FFC;
+	padding-top: 100px;
+}
+.contenedor-img-cinco-musicos {
+	padding: 0px;
+	background: url("../img/tarifa-cinco-musicos-3.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	position: relative;
+}
+.capa-cinco-musicos{
+	background: blue;
+	height: 100%;
+	width: 100%;
+	margin:0px;
+
+	position: absolute;
+	z-index: 2;
+	-webkit-transition: opacity;
+	-moz-transition: opacity;
+	-o-transition: opacity;
+	transition: opacity;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	opacity: 0.3;
+}
+.capa-cinco-musicos:hover{
+	opacity: 0.6;
+}
+
+.texto-cinco-musicos {
+	position: absolute;
+	z-index: 10;
+	margin: auto;
+	width: 100%;
+	height: 300px;
+	top: 100px;
+}
+.texto-cinco-musicos h1 {
+	/*color: #1c7cd6;*/
+	color: #fff;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #1c7cd6 ;
+}
+.texto-cinco-musicos h2 {
+	/*color: #514E4E;*/
+	color: #fff;
+	font-size: 25px;
+}
+.videos-cinco-musicos {
+	text-align: center;
+	padding-top: 20px;
+	color: #fff;
+}
+.videos-cinco-musicos h3 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: dotted;
+	padding-bottom: 10px;
+}
+/********** GRUPO COMPLETO ************/
+
+.seccion-obciones.grupo-completo {
+	background: #c2255c;
+}
+.contenedor-img-grupo-completo {
+	padding: 0px;
+	background: url("../img/tarifa-grupo-completo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	position: relative;
+}
+
+.capa-grupo-completo {
+	background: -webkit-linear-gradient(left,#e64980, blue);
+	background: -moz-linear-gradient(left,#e64980, blue);
+	background: -o-linear-gradient(left,#e64980, blue);
+	height: 100%;
+	width: 100%;
+	margin:0px;
+	position: absolute;
+	z-index: 2;
+	-webkit-transition: opacity;
+	-moz-transition: opacity;
+	-o-transition: opacity;
+	transition: opacity;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	opacity: 0.4;
+}
+.capa-grupo-completo:hover {
+	opacity: 0.8;
+}
+.texto-grupo-completo {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 300px;
+	top: 100px
+}
+.texto-grupo-completo h1 {
+	/*color: #e64980;*/
+	color: #fff;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e64980 ;
+}
+.texto-grupo-completo h2 {
+	/*color: #514E4E;*/
+	color: #fff;
+	font-size: 25px;
+}
+.videos-grupo-completo {
+	text-align: center;
+	padding-top: 20px;
+	color: #fff;
+}
+.videos-grupo-completo h3 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: dotted;
+	padding-bottom: 10px;
+}
+
+/********* VALLENATO GUITARRA *******/
+.seccion-obciones.vallenato-guitarra {
+	background: #be4bdb;
+}
+.contenedor-img-vallenato-guitarra {
+	padding: 0px;
+	background: url("../img/tarifa-vallenato-guitarra.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	position: relative;
+}
+.capa-vallenato-guitarra {
+	background: -webkit-linear-gradient(right,#ae3ec9, #4c6ef5);
+	background: -moz-linear-gradient(right,#ae3ec9, #4c6ef5);
+	background: -o-linear-gradient(right,#ae3ec9, #4c6ef5);
+	height: 100%;
+	width: 100%;
+	margin:0px;
+	position: absolute;
+	z-index: 2;
+	-webkit-transition: opacity;
+	-moz-transition: opacity;
+	-o-transition: opacity;
+	transition: opacity;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	opacity: 0.4;
+}
+
+.capa-vallenato-guitarra:hover {
+	opacity: 0.8;
+}
+.texto-vallenato-guitarra {
+	position: absolute;
+	z-index: 10;
+	height: 300px;
+	width: 100%;
+	top: 100px;
+}
+.texto-vallenato-guitarra h1 {
+	/*color: #e64980;*/
+	color: #fff;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e64980 ;
+}
+.texto-vallenato-guitarra h2 {
+	/*color: #514E4E;*/
+	color: #fff;
+	font-size: 25px;
+}
+
+.videos-vallenato-guitarra {
+	text-align: center;
+	padding-top: 20px;
+	color: #fff;
+}
+.videos-vallenato-guitarra h3 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: dotted;
+	padding-bottom: 10px;
+}
+
+/******* NUESTROS TEMAS *******/
+
+.mas-videos {
+	background: url("../img/fondo-instrumentos.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 300px;
+	width: 100%;
+	margin-bottom: 100px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.capa-mas-videos {
+	width: 100%;
+	height: 300px;
+	background: #000;
+	opacity: 0.5;
+	position: absolute;
+	z-index: 40;
+}
+.videos {
+	margin-bottom: 50px;
+}
+.container {
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+.contenedor-videos {
+	margin: auto;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.contenedor-videos > .col-md-6,
+.contenedor-videos > .col-sm-6,
+.contenedor-videos > .colxs-12 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.contenedor-img a .btn-img p {
+	font-size: 18px;
+	line-height: 32px;
+}
+.contenedor-img a .btn-img {
+	
+	width: 150px;
+	height: 50px;
+	margin: auto;
+	background: #fff;
+	border-radius: 0;
+	color: blue;
+	transition: background 1s;
+}
+.contenedor-img a .btn-img:hover {
+	width: 150px;
+	height: 50px;
+	margin: auto;
+	background: blue;
+	border: none;
+	border-radius: 0;
+	color: #fff;
+}
+
+.papel-roto img {
+	width: 100%;
+}
+.banner-comentarios {
+	height: auto;
+}
+.opinion-clientes h1 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-family: 'Playfair Display', serif;
+}
+.carousel  {
+	width: 100%;
+	height: auto;
+
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.carousel .item {
+	margin-bottom: 50px;
+	padding: 20px;
+
+} 
+.carousel .item > article {
+	text-align: center;
+	
+}
+.carousel .item > article p {
+
+	text-align: justify;
+	font-size: 18px;
+	width: 60%;
+	margin: auto;
+}
+.carousel .item > p {
+	width: 100%;
+	text-align: right;
+	margin-top: 30px;
+	padding-right: 20%;
+	font-size: 16px;
+	font-family: 'Playfair Display', serif;
+
+}
+.carousel .item .comillas {
+	font-size: 25px;
+	padding: 0;
+	margin:0;
+}
+.carousel-control .glyphicon-chevron-right, 
+.carousel-control .glyphicon-chevron-left {
+	color: #838383;
+}
+.carousel-control {
+	width: 50px;
+	height: 60px;
+	top: 20%;
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, .0001)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, .5)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1) 0%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.carousel-control .right:hover, 
+.carousel-control .left:hover {
+}
+.carousel-indicators li {
+	border: 1px solid blue;
+}
+.carousel-indicators .active {
+	border: 1px solid blue;
+	background-color: blue;
+}
+
+
+/******** SECCTION DE REDES SOCIALES ******/
+
+.redes-sociales {
+	padding-top: 100px;
+	text-align: center;
+}
+.redes-sociales h3 {
+	margin-bottom: 50px;
+}
+.iconos-redes-sociales a {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding-top: 0px;
+}
+.iconos-redes-sociales a img,
+.iconos-redes-sociales img {
+	width: 30px;
+	margin-right: 20px;
+	padding-left: 0px;
+}
+.item-redes-sociales {
+	width: 200px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+
+/******SECTION DE FORM-CONTACTO*/
+.form-contacto {
+	background: #5252D9;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 30px;
+
+}
+
+.form-contacto form {
+	margin: 30px auto;
+	border-top: 2px solid #000;
+}
+.form-contacto form label {
+	color: #fff; 
+	font-size: 20px;
+}
+.form-contacto form .obligatorio {
+	color: red;
+}
+.form-contacto h3 {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 30px;
+}
+.form-contacto .nota p {
+	color: #fff;
+
+}
+
+.form-contacto form .enviar {
+	background: none;
+	border: 1px solid #fff;
+	color: #fff;
+	width: 100%;
+	font-size: 20px;
+}
+.form-contacto form .enviar:hover {
+	background: #fff;
+	border: 1px solid #fff;
+	color: #5252D9;
+	width: 100%;
+}
+/*********************************************/
+
+footer {
+	text-align: center;
+	color: #fff;
+	background: #000;
+	font-family: 'Playfair Display', serif;
+	
+}
+footer section h4 {
+	font-size: 16px;
+}
+/*-------- ESTILOS PARA FUENTES-----------*/
+
+.fuente-playfair {
+	font-family: 'Playfair Display', serif;
+}
+.fuente-oleo-script {
+	font-family: 'Oleo Script', cursive;
+}
+header h1 {
+	font-family: 'Oleo Script', cursive;
+	font-size: 100px;
+	margin-bottom: 0px;
+}
+header h4 {
+	font-size: 30px;
+	color: #fab005;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.texto-descripcion {
+	font-size: 20px;
+	text-align: justify;
+	line-height: 40px;
+	padding: 20px;
+}
+.texto-descripcion > span {
+	font-size: 40px;
+}
+.texto-compartir-videos {
+	font-size: 20px;
+	text-align: justify;
+	line-height: 30px;
+	padding: 0px;
+}
+.presentacion-formatos h2 {
+	font-size: 50px;	
+}
+.presentacion-formatos p {
+	font-size: 18px;
+	color: #828181;	
+}
+.texto-cinco-musicos li, 
+.texto-grupo-completo li,
+.texto-vallenato-guitarra li {
+	font-size: 18px;
+	/*color: #828181;*/
+	color: #fff;
+}
+.titulos {
+	text-align: center;
+	font-size: 45px;
+}
+.subtitulos {
+	font-size: 30px;
+	text-align: center;
+}
+.mas-videos h2 {
+	color: #fff;
+	font-size: 50px;
+	font-family: 'Playfair Display', serif;
+	line-height: 250px;
+	position: absolute;
+	z-index: 500;
+	text-align: center;
+	width: 100%;
+}
+
+/*------ 	@MEDIAS ------*/
+@media (max-width: 300px) {
+	iframe {
+		width: 100%;
+	}
+}
+@media (min-width: 300px) and (max-width: 480px) {
+	header {
+	/*background-image: url("../img/fondo-header-celular.png");*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: #fff;
+	}
+	
+	.contacto p {
+		font-size: 15px;
+		width: 200px;
+		margin: auto;
+		display: inline;
+	}
+	.mas-videos, .capa-mas-videos {
+		height: 200px;
+	}
+	.mas-videos h2 {
+		font-size: 16px;
+		line-height: 150px;
+	}
+	.titulos {
+		font-size: 45px;
+		margin-top: 40px;
+	}
+	.texto-descripcion {
+		font-size: 17px;
+		text-align: justify;
+		line-height: 25px;
+		padding: 10px;
+	}
+	.separador1 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.texto-descripcion > span {
+		font-size: 40px;
+	}
+	.subtitulos {
+		font-size: 18px;
+	}
+	.mas-videos h2 {
+		font-size: 25px;
+		line-height: 150px;
+	}
+	header h1 {
+		font-size: 60px;
+		text-align: center;
+	}
+	header h4 {
+	font-size: 18px;
+	}
+	.opinion-clientes h1 {
+		font-size: 20px;
+	}
+	.form-contacto h3 {
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 20px;
+	}
+
+	footer section h4 {
+		font-size: 14px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 500px) {
+	
+
+	.mas-videos, .capa-mas-videos {
+		height: 200px;
+	}
+	.mas-videos h2 {
+		font-size: 25px;
+		line-height: 150px;
+	}
+	.carousel .item > article p {
+
+		text-align: justify;
+		font-size: 16px;
+		width: 80%;
+		margin: auto;
+	}
+	header h1 {
+		font-size: 60px;
+		text-align: center;
+	}
+	header h4 {
+	font-size: 18px;
+	}
+	.carousel-control {
+	width: 30px;
+	height: 40px;
+	top: 40%;
+	}
+	.presentacion-formatos h2 {
+	font-size: 30px;	
+	}
+	.presentacion-formatos p {
+		font-size: 18px;
+		color: #828181;	
+	}
+
+ }
+
+@media (min-width: 501px) and (max-width: 699px) {
+
+	.mas-videos h2 {
+	font-size: 30px;
+	}
+	header h1 {
+		font-size: 55px;
+		text-align: center;
+	}
+	header h4 {
+		font-size: 20px;
+	}
+ }
+
+@media (min-width: 700px) and (max-width: 900px)  {
+
+	.mas-videos h2 {
+		font-size: 40px;
+	}
+	header h1 {
+		font-size: 80px;
+		text-align: center;
+	}
+	header h4 {
+		font-size: 20px;
+	}
+ }
+@media (min-width: 801px) {
+
+	.mas-videos h2 {
+		font-size: 50px;
+		float: right;
+	}
+ }
+
+@media (min-width: 991px) {
+
+	.foto-flotante img {
+		width: 430px;
+		visibility: visible;
+		position: relative;
+		float: right;
+	}
+}

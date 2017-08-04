@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<link rel="stylesheet" href="View/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="View/css/mis-estilos.css"/>
-	<link rel="stylesheet" href="View/css/estilos_index_principal.css">
 </head>
 <body>
 <!-- INICIO HEADER -->

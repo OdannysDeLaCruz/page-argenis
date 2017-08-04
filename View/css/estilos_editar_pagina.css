@@ -113,8 +113,12 @@ html, body {
 
 /*Seccion Header*/
 .header {
-	background: green;
 	margin-top: 0;
+	background: #88FBA3;
+}
+.fondo-header {
+	position: absolute;
+	width: 200px;
 }
 .header p {
 	color: #fff;	
@@ -145,20 +149,7 @@ html, body {
 .videos-header {
 	margin: 20px 0 20px 0;
 }
-.cambiar-imagen-header {
-	width: 500px;
-	margin: auto;
-	padding: 20px 0 20px 0;
-}
-.header input, .mensaje-header {
-	background: none;
-    border: none;
-    color: #fff;
-    box-shadow: none;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    border-radius: 0;
-}
+
 .mensaje-header {
     border: 1px solid #fff;
 }
@@ -166,19 +157,18 @@ html, body {
 
 /*Seccion de tipo de evento*/
 .tipo-evento {
+	height: 200px;
 	background: #fff;
-	margin: 20px 0 20px 0;
+	margin: auto;
 }
 .titulo-tipo-evento {
-	width: 600px;
+	width: 700px;
 	text-align: center;
 	margin: auto;
-	font-size: 30px;
 }
 .mensaje-tipo-evento {
-	width:100%;
+	width: 90%;
 	margin: auto;
-	font-size: 18px;
 }
 .tipo-evento input, .mensaje-tipo-evento {
 	background: none;
@@ -194,15 +184,6 @@ html, body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
-
-}
-.titulo-cinco-musicos {
-	font-size: 30px;
-	text-align: center;
-}
-.subtitulo-cinco-musicos {
-	font-size: 18px;
-	text-align: center;
 }
 .videos-cinco-musicos {
 	color: #fff;
@@ -212,16 +193,7 @@ html, body {
 	font-size: 16px;
 	
 }
-.cinco-musicos input {
-	background: none;
-	border-top: none;
-	border-right: none;
-    border-bottom: 1px solid #fff;
-    border-radius: 0;
-    color: #fff;
-    box-shadow: none;
 
-}
 /*----------------------*/
 
 /*Seccion grupo completo*/
@@ -230,12 +202,6 @@ html, body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-.titulo-grupo-completo {
-	font-size: 30px;
-}
-.subtitulo-grupo-completo {
-	font-size: 18px;
-}
 .videos-grupo-completo {
 	color: #fff;
 	text-align: left;
@@ -243,16 +209,7 @@ html, body {
 .videos-grupo-completo > input,p {
 	font-size: 16px;
 }
-.grupo-completo input {
-	background: none;
-	border-top: none;
-	border-right: none;
-    border-bottom: 1px solid #fff;
-    border-radius: 0;
-    color: #fff;
-    box-shadow: none;
 
-}
 /*----------------------------*/
 
 /*Seccion vallenato guitarra*/
@@ -261,12 +218,7 @@ html, body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-.titulo-vallenato-guitarra {
-	font-size: 30px;
-}
-.subtitulo-vallenato-guitarra {
-	font-size: 18px;
-}
+
 .videos-vallenato-guitarra {
 	color: #fff;
 	text-align: left;
@@ -274,38 +226,20 @@ html, body {
 .videos-vallenato-guitarra > input,p {
 	font-size: 16px;
 }
-.vallenato-guitarra input {
-	background: none;
-	border-top: none;
-	border-right: none;
-    border-bottom: 1px solid #fff;
-    border-radius: 0;
-    color: #fff;
-    box-shadow: none;
 
-}
 /*--------------------------*/
 /*Seccion mas temas*/
-.mas-temas {
-	/*padding: 5px;*/
+
+.fondo-mas-temas {
+	position: absolute;
+	width: 200px;
 }
 .titulo-mas-temas {
 	width: 500px;
 	text-align: center;
 	color: #666;
-	font-size: 30px;
 	margin: auto;
 	margin-bottom: 30px;
-}
-.mas-temas input{
-	background: none;
-	border-top: none;
-	border-right: none;
-    border-bottom: 1px solid #757070;
-    border-radius: 0;
-    color: #666;
-    box-shadow: none;
-    margin-bottom: 10px;
 }
 .mas-temas label {
 	color: #666
@@ -316,15 +250,18 @@ html, body {
 	padding: 10px;
 	background: #CDCCCC;
 	width: 500px;
+	text-align: center;
 }
 
 /*---------------------------*/
 /*Seccion opinion clientes*/
+
 .opinion-clientes {
 	text-align: center;
-	background: #fff;
+	background: #FBD37D;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-top: 10px;
 }
 .titulo-opinion-clientes {
 	font-size: 30px;
@@ -354,23 +291,84 @@ html, body {
 	box-shadow: none;
 
 }
+.logos-redes {
 
+	width: 30px;
+	margin-bottom: 10px;
+}
 /*-----------------------------*/
 /*cambiar imagen de fondo de las secciones */
-.cambiar-imagen-fondo{
+.cambiar-imagen-fondo {
 	margin-top: 40px;
 	padding: 10px;
 	background: #CDCCCC;
+	text-align: center;
 }
+.imagen-header-fondo {
+	width: 400px;
+	margin: auto;
+}
+
+.fondo-header,
+.fondo-vallenato-guitarra,
+.fondo-cinco-musicos,
+.fondo-grupo-completo,
+.fondo-mas-temas
+{
+	position: relative;
+	width: 200px;
+	margin-bottom: 10px;
+
+}
+/*dar formato a titulos y subtitulos de las secciones */
+
+.titulo-tipo-evento,
+.titulo-cinco-musicos,
+.titulo-grupo-completo,
+.titulo-vallenato-guitarra {
+
+	font-size: 30px;
+	text-align: center;
+}
+.subtitulo-cinco-musicos,
+.subtitulo-grupo-completo,
+.subtitulo-vallenato-guitarra,
+.mensaje-tipo-evento {
+
+	font-size: 18px;
+	text-align: center;
+}
+
 /*--------------------------------*/
+/*Formato para seccion numero de contacto*/
+
 .seccion-numero-telefono {
 	margin: 10px 0 20px 0;
 	padding: 20px;
 }
 input.numero-telefono {
-	width: 300px;
+	width: 200px;
 	margin: auto;
 }
+
+/*--------------------------------*/
+/*Receteo de inputs y textareas*/
+.url-video,
+.tipo-evento input,
+.mas-temas input,
+.vallenato-guitarra input,
+.grupo-completo input, 
+.cinco-musicos input, 
+.header input, .mensaje-header
+{
+	background: rgba(0,0,0,0.4);
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 /*----------------------------------*/
 
 /*ESTILOS DE FOOTER DE PAGINA EDITAR_PAGINA*/
@@ -395,28 +393,37 @@ form .btn-enviar {
 	z-index: 3000;
 	width: 150px;
 } 
-/*form .btn-enviar {
+
+/*Boton ir arriba*/ 
+
+.boton_subir {
+	background: #E11616;
 	position: fixed;
-	top: 20px;
-	left: 20px;
-	z-index: 3000;
-	width: 160px;
-	height: 60px;
-	border-radius: none;
-	transition-property: left height,width,border-radius;
-	transition-duration: 0.4s,0.4s,0.4s, 0.4s;
+	width: 50px;
+	height: 50px;
+	right: 13px;
+	top: 89%;
+	z-index: 2000;
+	cursor: pointer;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	-webkit-box-shadow: 5px 3px 15px #000;
+	-moz-box-shadow: 5px 3px 15px #000;
+	box-shadow: 5px 3px 15px #000;
+	
+
 }
-form .btn-enviar:hover {
 
-	border: none;
-} 
-form .btn-enviar:focus {
-	left: 51px;
-	width: 60px; 
-	height: 60px;
-	border-radius:125px;
-
-}*/
+.boton_subir > .glyphicon {
+	position: absolute;
+	font-size: 20px;
+	top: 15px;
+	left: 15px;
+	color: #fff;
+}
+/*-----------------------------------*/
 
 @media (min-width: 300px) and (max-width: 900px) {
 
@@ -450,11 +457,14 @@ form .btn-enviar:focus {
 
 		width:100%;
 	}
+	.imagen-header-fondo {
+		width: 100%;
+	}
 	.seccion-mensaje-header {
 		padding: 0 0 20px 0;
 	}
 	.grupo-completo {
-		height: 900px;
+		height: 1200px;
 	}
 	
 	/*Cambio de posicion*/
@@ -469,7 +479,7 @@ form .btn-enviar:focus {
 
 		position: absolute;
 		width: 97%;
-		margin-top: 350px;
+		margin-top: 550px;
 	}
 	.titulo-mas-temas {
 		width: 100%;
@@ -481,5 +491,29 @@ form .btn-enviar:focus {
 		background: #CDCCCC;
 		width: 100%;
 	}
+	.titulo-hedaer,
+	.titulo-tipo-evento,
+	.titulo-cinco-musicos,
+	.titulo-grupo-completo,
+	.titulo-vallenato-guitarra {
+
+		font-size: 23px;
+	}
+	.mensaje-header,
+	.subtitulo-header,
+	.subtitulo-cinco-musicos,
+	.subtitulo-grupo-completo,
+	.subtitulo-vallenato-guitarra,
+	.mensaje-tipo-evento  {
+
+		font-size: 16px;
+	}
+
+	form .btn-enviar {
+		top: 8px;
+		left: 5px;
+		width: 100px;
+	} 
+
 
 }

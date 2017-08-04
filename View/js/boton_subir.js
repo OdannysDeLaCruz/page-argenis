@@ -7,7 +7,7 @@ $(document).ready(function(){
 	});
  
 	$(window).scroll(function(){
-		if( $(this).scrollTop() > 0 ){
+		if( $(this).scrollTop() > 400 ){
 			$('.boton_subir').slideDown(500);
 		} else {
 			$('.boton_subir').slideUp(500);

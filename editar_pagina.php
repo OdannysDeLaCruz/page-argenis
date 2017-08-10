@@ -19,7 +19,7 @@ $Objeto = new procesarDatos();
 	
 	<figure class="img-admin">
 		<img src="View/img/fondo-header-2.jpg" alt="Img-Admin">
-	</figure>
+	</figure>	
 	<section class="menu">
 		<h5>Admin</h5> <span class="glyphicon glyphicon-chevron-down"></span>
 	</section>
@@ -33,6 +33,7 @@ $Objeto = new procesarDatos();
 		<ul>
 			<a href="editar_pagina.php"><li><span class="glyphicon glyphicon-home"></span> Principal</li></a>
 			<a href="editar-galeria.php"><li><span class="glyphicon glyphicon-picture"></span> Galerìa</li></a>
+			<a href="subir_imagen_secciones.php"><li><span class="glyphicon glyphicon-picture"></span> Imagenes de fondos</li></a>
 		</ul>
 	</nav>
 
@@ -115,8 +116,8 @@ $misVideos = $Objeto->seleccionarVideos(2);
 						
 						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-header" alt="imagen">
 
-						<p>Cambiar imagen de fondo de esta seccion.</p>
-						<input type="file" name="imagen-header-fondo" class="imagen-header-fondo form-control">
+						<p>Nombre de la imagen que quiere en esta seccion (Principal), por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" name="imagen-header-fondo" class="imagen-header-fondo form-control">
 
 					</section>				
 
@@ -162,8 +163,8 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',3);
 
 						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-cinco-musicos" alt="imagen">
 						
-						<p>Cambiar imagen de fondo de esta sección.</p>
-						<input type="file" name="imagen-cinco-musicos" class="imagen-cinco-musicos form-control">
+						<p>Nombre de la imagen que quiere en esta seccion (5 Musicos)por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" name="imagen-cinco-musicos" class="imagen-cinco-musicos form-control">
 
 					</section>
 
@@ -177,10 +178,10 @@ $misVideos = $Objeto->seleccionarVideos(3);
  					<?php foreach ($misVideos as $videos) { ?>
 					
 					<label>Nombre del video 1</label><br>		
-					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-1" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-cinco-1" cols="30" rows="3" class="url-video url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -189,10 +190,10 @@ $misVideos = $Objeto->seleccionarVideos(4);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 2</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-2" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-cinco-2" cols="30" rows="3" class="url-video url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -201,10 +202,10 @@ $misVideos = $Objeto->seleccionarVideos(5);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 3</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-3" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-cinco-3" cols="30" rows="3" class="url-video url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 
@@ -229,10 +230,10 @@ $misVideos = $Objeto->seleccionarVideos(6);
  					<?php foreach ($misVideos as $videos) { ?>
 					
 					<label>Nombre del video 1</label><br>		
-					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-grupo-completo-1 form-control" name="titulo-video-grupo-1" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-grupo-1" cols="30" rows="3" class="url-video url-video-grupo-completo-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -241,10 +242,10 @@ $misVideos = $Objeto->seleccionarVideos(7);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 2</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-grupo-completo-2 form-control" name="titulo-video-grupo-2" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-grupo-2" cols="30" rows="3" class="url-video url-video-grupo-completo-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -253,10 +254,10 @@ $misVideos = $Objeto->seleccionarVideos(8);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 3</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-grupo-completo-3 form-control" name="titulo-video-grupo-3" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-grupo-3" cols="30" rows="3" class="url-video url-video-grupo-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 
@@ -268,7 +269,7 @@ $misVideos = $Objeto->seleccionarVideos(8);
 					<h3><input type="text" class="titulo titulo-grupo-completo form-control" name="titulo-grupo-completo" value="<?php echo $datos['titulo']; ?>"></h3>
 
 					<!-- Subtitulo -->
-					<input type="text" class="subtitulo subtitulo-grupo-completo form-control" value="<?php echo $datos['subtitulo']; ?>"><br><br>
+					<input type="text" class="subtitulo subtitulo-grupo-completo form-control" name="subtitulo-grupo-completo" value="<?php echo $datos['subtitulo']; ?>"><br><br>
 					
 					<p class="text-left">Separe el listado con dos puntos( : )</p>
 					<input type="text" class="listado-grupo-completo form-control" name="listado-grupo-completo" value="<?php echo $datos['mensaje']; ?>">
@@ -277,8 +278,8 @@ $misVideos = $Objeto->seleccionarVideos(8);
 
 						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-grupo-completo" alt="imagen">
 
-						<p>Cambiar imagen de fondo de esta seccion.</p>
-						<input type="file" class="imagen-grupo-completo form-control" name="imagen-grupo-completo">
+						<p>Nombre de la imagen que quiere en esta sección (Grupo Completo), por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-grupo-completo form-control" name="imagen-grupo-completo">
 
 					</section>
 				</section>
@@ -295,12 +296,12 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',5);
 
 				<section class="col-md-6 text-center">
 
-				<input type="hidden" name="id_vallenato_guitarra" value="5">
+				<input type="hidden" name="id-vallenato-guitarra" value="5">
 					<!-- Titulo -->
-					<h3><input type="text" class="titulo titulo-vallenato-guitarra form-control" value="<?php echo $datos['titulo']; ?>"></h3>
+					<h3><input type="text" class="titulo titulo-vallenato-guitarra form-control" name="titulo-vallenato-guitarra" value="<?php echo $datos['titulo']; ?>"></h3>
 
 					<!-- Subtitulo -->
-					<input type="text" class="subtitulo subtitulo-vallenato-guitarra form-control" value="<?php echo $datos['subtitulo']; ?>"><br><br>
+					<input type="text" class="subtitulo subtitulo-vallenato-guitarra form-control" name="subtitulo-vallenato-guitarra" value="<?php echo $datos['subtitulo']; ?>"><br><br>
 					
 					<p class="text-left">Separe el listado con dos puntos ( : )</p>
 					<input type="text" class="listado-vallenato-guitarra form-control" name="listado-vallenato-guitarra" value="<?php echo $datos['mensaje']; ?>">
@@ -310,8 +311,8 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',5);
 
 						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-vallenato-guitarra" alt="imagen">
 						
-						<p>Cambiar imagen de fondo de esta seccion.</p>
-						<input type="file" class="imagen-vallenato-guitarra form-control" name="imagen-vallenato-guitarra">
+						<p>Nombre de la imagen que quiere en esta sección (Vallenato Con Guitarra), por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-vallenato-guitarra form-control" name="imagen-vallenato-guitarra">
 
 					</section>
 
@@ -324,10 +325,10 @@ $misVideos = $Objeto->seleccionarVideos(9);
  					<?php foreach ($misVideos as $videos) { ?>
 					
 					<label>Nombre del video 1</label><br>		
-					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-cinco-musicos-1" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-1 form-control" name="titulo-video-vallenato-1" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-1" cols="30" rows="3" class="url-video url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-vallenato-1" cols="30" rows="3" class="url-video url-video-cinco-musicos-1 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -336,10 +337,10 @@ $misVideos = $Objeto->seleccionarVideos(10);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 2</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-cinco-musicos-2" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-2 form-control" name="titulo-video-vallenato-2" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-2" cols="30" rows="3" class="url-video url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-vallenato-2" cols="30" rows="3" class="url-video url-video-cinco-musicos-2 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 <?php 
@@ -348,10 +349,10 @@ $misVideos = $Objeto->seleccionarVideos(11);
  					<?php foreach ($misVideos as $videos) { ?>
 
 					<label>Nombre del video 3</label><br>	
-					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-cinco-musicos-3" value="<?php echo $videos['titulo']; ?>">
+					<input type="text" class="titulo-video-cinco-musicos-3 form-control" name="titulo-video-vallenato-3" value="<?php echo $videos['titulo']; ?>">
 
 					<label>Url del video</label><br>
-					<textarea name="url-video-cinco-musicos-3" cols="30" rows="3" class="url-video url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
+					<textarea name="url-video-vallenato-3" cols="30" rows="3" class="url-video url-video-cinco-musicos-3 form-control"><?php echo $videos['url']; ?></textarea><br><br>	
 
 					<?php } ?>
 
@@ -367,8 +368,9 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',6);
  ?>
 					<?php foreach ($misDatos as $datos) { ?>
 
-					<input type="hidden" name="id_mas_temas" value="6">
-					<br><h1><input type="text" class="titulo-mas-temas form-control" name="titulo-mas-temas" value="<?php echo $datos['titulo']; ?>"></h1><br><br>
+					<input type="hidden" name="id-mas-temas" value="6">
+
+					<br><h1><input type="text" name="titulo-mas-temas" class="titulo-mas-temas form-control" value="<?php echo $datos['titulo']; ?>"></h1><br><br>
 			<?php } ?>
 
 <?php 
@@ -451,8 +453,8 @@ $misVideos = $Objeto->seleccionarVideos(17);
 
 					<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-mas-temas" alt="imagen">
 
-					<p>Cambiar imagen de fondo de esta seccion.</p>
-					<input type="file" class="imagen-mas-temas form-control" name="imagen-mas-temas">
+					<p>Nombre de la imagen que quiere en esta sección (Mas Temas), por ej: (imagen.jpg ó imagen.png)</p>
+					<input type="text" class="imagen-mas-temas form-control" name="imagen-mas-temas">
 				</section>	
 			</section>
 			<!-- FIN MAS TEMAS -->
@@ -524,8 +526,8 @@ $misDatos = $Objeto->seleccionar('contacto','id',3);
 
 						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
 
-						<p>Cambie la imagen de la red social aquí.</p>
-						<input type="file" class="imagen-red-social-1 form-control" name="imagen-red-social-1">
+						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-red-social-1 form-control" name="imagen-red-social-1">
 
 					</section>
 				</section>
@@ -542,8 +544,8 @@ $misDatos = $Objeto->seleccionar('contacto','id',4);
 
 						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
 
-						<p>Cambie la imagen de la red social aquí.</p>
-						<input type="file" class="imagen-red-social-2 form-control" name="imagen-red-social-2">
+						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-red-social-2 form-control" name="imagen-red-social-2">
 
 					</section>
 				</section>
@@ -560,8 +562,8 @@ $misDatos = $Objeto->seleccionar('contacto','id',5);
 
 						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
 
-						<p>Cambie la imagen de la red social aquí.</p>
-						<input type="file" class="imagen-red-social-3 form-control" name="imagen-red-social-3">
+						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-red-social-3 form-control" name="imagen-red-social-3">
 
 					</section>
 				</section>
@@ -578,8 +580,8 @@ $misDatos = $Objeto->seleccionar('contacto','id',6);
 
 						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
 
-						<p>Cambie la imagen de la red social aquí.</p>
-						<input type="file" class="imagen-red-social-4 form-control" name="imagen-red-social-4">
+						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
+						<input type="text" class="imagen-red-social-4 form-control" name="imagen-red-social-4">
 
 					</section>
 				</section>
@@ -595,14 +597,14 @@ $misDatos = $Objeto->seleccionar('contacto','id',1);
  ?>
 				
 			<?php  foreach ($misDatos as $datos) { ?>
-				<input type="text" class="numero-telefono form-control" name="numero-telefono" value="<?php echo $datos['tel']; ?>">
+				<input type="text" class="numero-telefono form-control" name="numero-telefono-1" value="<?php echo $datos['tel']; ?>">
 			<?php } ?>
 
  <?php
 $misDatos = $Objeto->seleccionar('contacto','id',2);
  ?>
 			<?php  foreach ($misDatos as $datos) { ?>
-				<input type="text" class="numero-telefono form-control" name="numero-telefono" value="<?php echo $datos['tel']; ?>">
+				<input type="text" class="numero-telefono form-control" name="numero-telefono-2" value="<?php echo $datos['tel']; ?>">
 			<?php } ?>
 			</section>
 

@@ -298,6 +298,7 @@ html, body {
 }
 /*-----------------------------*/
 /*cambiar imagen de fondo de las secciones */
+
 .cambiar-imagen-fondo {
 	margin-top: 40px;
 	padding: 10px;
@@ -313,7 +314,8 @@ html, body {
 .fondo-vallenato-guitarra,
 .fondo-cinco-musicos,
 .fondo-grupo-completo,
-.fondo-mas-temas
+.fondo-mas-temas,
+.imagen
 {
 	position: relative;
 	width: 200px;
@@ -425,12 +427,96 @@ form .btn-enviar {
 }
 /*-----------------------------------*/
 
-@media (min-width: 300px) and (max-width: 900px) {
+/*Estilos de pagina subir_imagen_secciones.php*/
 
+.opciones {
+	background: #989899;
+	height: auto;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+
+.items_opciones {
+	height: 200px;
+	width: 200px;
+	margin: 5px;
+	background: #191B63;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.items {
+	color: #fff;
+	align-self: center;
+	text-align: center;
+	font-family: arial-black;
+	font-size: 20px;
+}
+/*-------------------------------------------*/
+
+/*Estilos de pagina Subir.php*/
+
+.seccion_subir_imagen {
+	height: 250px;
+	width: 250px;
+	margin: auto;
+	background: #23282d;
+	border-radius: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.seccion_subir_imagen h1{
+	font-size: 30px;
+	color: #fff;
+}
+.imagen {
+	width: 80%;
+}
+
+.boton_enviar {
+	width: 100px;
+}
+.item_subir_imagen {
+	align-self: center;
+
+}
+.imagenes_subidas {
+
+	margin: 50px auto;
+	float: right;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.item_imagen {
+	margin: 0 5px 0 5px;
+	width: 100px;
+	height: 100px;
+}
+
+/*---------------------------------*/
+
+
+@media (min-width: 300px) and (max-width: 900px) {
+	.seccion_subir_imagen {
+		height: 180px;
+		width: 180px;
+	}
+	.seccion_subir_imagen h1{
+		font-size: 20px;
+	}
+	.imagen {
+		width: 70%;
+	}
 	.panel-control {
 		position: relative;
 		width: 100%;
-		height: 150px;
+		height: 200px;
 	}
 	.menu-panel-control {
 		z-index: 2;

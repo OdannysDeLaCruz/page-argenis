@@ -414,8 +414,6 @@ form .btn-enviar {
 	-webkit-box-shadow: 5px 3px 15px #000;
 	-moz-box-shadow: 5px 3px 15px #000;
 	box-shadow: 5px 3px 15px #000;
-	
-
 }
 
 .boton_subir > .glyphicon {
@@ -426,7 +424,60 @@ form .btn-enviar {
 	color: #fff;
 }
 /*-----------------------------------*/
+/*Estilos de pagina editar-galeria.php*/
 
+.btn-subir-imagen {
+	background: #3DE488;
+	border: none;
+}
+.btn-subir-imagen:hover {
+	background: #33C273;
+}
+
+.galeria {
+	width: 80%;
+	margin: 40px 25px 0 0;
+	float: right;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+.item_galeria {
+	display: flex;
+}
+.item_galeria img{
+	width: 120px;
+	height: 120px;
+	margin: 5px;
+}
+.content-eliminar {
+	background: rgba(0,0,0, 0.5);
+	width: 120px;
+	height: 120px;
+	margin: 5px;
+	position: absolute;
+	opacity: 0;
+	transition: all ease 0.3s;
+}
+.content-eliminar:hover {
+	opacity: 1;
+}
+.item_galeria .btn-eliminar {
+	width: 25px;
+	height: 25px;
+	margin-left: 48px;
+	margin-top: 48px;
+
+}
+@media (min-width: 300px) and (max-width: 900px){
+	.galeria {
+		width: 100%;
+		clear: both;
+		margin: 20px 0 20px 0;
+	}
+}
+/*-------------------------------------------*/
 /*Estilos de pagina subir_imagen_secciones.php*/
 
 .opciones {
@@ -456,7 +507,70 @@ form .btn-enviar {
 	font-family: arial-black;
 	font-size: 20px;
 }
-/*-------------------------------------------*/
+.items img:hover {
+	width: 55px;
+}
+/*Media Query de subir_imagen_secciones.php*/
+@media (min-width: 300px) and (max-width: 500px){
+	.items_opciones {
+		height: 120px;
+		width: 120px;	
+	}
+	.items {
+		font-size: 16px;
+	}
+}
+/*Estilos de pagina errorSubirImagen.php*/
+
+.error {
+	background: #BABABD;
+	width: 500px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 50px auto;
+}
+.mensaje {
+	font-size: 24px;
+	color: #fff;
+	font-family: arial-black;
+}
+.item_result {
+	align-self: center;
+}
+.btn-regresar {
+	background: #3DE488;
+	border: none;
+	font-size: 19px;
+	font-family: arial-black;
+}
+.botones {
+	width: 300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.btn-regresar:hover {
+	background: #2CAC65;
+}
+@media (min-width: 300px) and (max-width: 500px) {
+
+	.error {
+		margin-top: 0;
+		width: 100%;
+		height: 100%;
+
+	}
+	.mensaje {
+		font-size: 19px;
+	}
+	.btn-regresar {
+		font-size: 18px;
+	}
+}
+
+/*------------------------------------------*/
 
 /*Estilos de pagina Subir.php*/
 
@@ -474,33 +588,53 @@ form .btn-enviar {
 	font-size: 30px;
 	color: #fff;
 }
-.imagen {
+
+.input-imagen {
 	width: 80%;
 }
-
 .boton_enviar {
 	width: 100px;
+	background: #3DE488;
+	border: none;
 }
+.boton_enviar:hover {
+	background: #33C273;
+}
+
 .item_subir_imagen {
 	align-self: center;
 
 }
 .imagenes_subidas {
-
-	margin: 50px auto;
+	width: 80%;
+	margin-right: 25px;
 	float: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.texto-subidas {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.item_texto {
+	font-size: 24px;
+	font-family: arial-black;
+	text-align: center;
+}
+.imagenes {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .item_imagen {
-	margin: 0 5px 0 5px;
-	width: 100px;
-	height: 100px;
+	margin: 2px;
+	width: 80px;
+	height: 80px;
 }
 
 /*---------------------------------*/
-
 
 @media (min-width: 300px) and (max-width: 900px) {
 	.seccion_subir_imagen {
@@ -510,8 +644,20 @@ form .btn-enviar {
 	.seccion_subir_imagen h1{
 		font-size: 20px;
 	}
+	.imagenes_subidas {
+		width: 100%;
+		margin: 0px;
+		float: none;
+	}
+	.logo_subir {
+		width: 60px;
+	}
 	.imagen {
 		width: 70%;
+	}
+	.item_imagen {
+		width: 50px;
+		height: 50px;
 	}
 	.panel-control {
 		position: relative;

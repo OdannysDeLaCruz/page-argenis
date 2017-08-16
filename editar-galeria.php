@@ -1,3 +1,10 @@
+<?php 
+include_once('Model/procesarDatosModel.php');
+$Objeto = new procesarDatos();
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,37 +42,47 @@
 
 	<section class="col-md-10 panel-edicion">
 
-		<form action="">
+		<form action="Controller/galeriaController.php" method="post" enctype="multipart/form-data">
 			
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reiciendis sint, aliquam at voluptatum. Repudiandae exercitationem dolore quam cupiditate, debitis! Consequatur ipsa aliquam eum sequi ipsum? Reprehenderit nisi, illum dolorum.</p></section>
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A reprehenderit earum iure at, voluptatem, animi rerum repellat dolores architecto corrupti corporis excepturi beatae, unde rem. Modi quasi itaque excepturi a.</p></section>
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sunt, in placeat cumque aliquid laborum consequatur dolorum impedit voluptates atque, delectus nobis officiis laboriosam ab aliquam, nulla neque iure et?</p></section>
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis numquam excepturi sequi tenetur distinctio ullam reiciendis, eos ipsum autem eaque, officia neque provident soluta omnis molestiae explicabo quas voluptas odit.</p></section>
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima soluta amet et suscipit perspiciatis odit, ea enim alias temporibus modi. Nobis recusandae placeat eligendi deserunt qui ea architecto facere tenetur.</p></section>
-				<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quaerat cupiditate sunt voluptates ut amet nobis sint tempore, dolor cum, dolores! Nostrum non molestiae ex voluptas porro, rerum sint omnis.</p></section>	
+			<section class="row seccion_subir_imagen text-center">
+					
+				<img class="item_subir_imagen logo_subir" src="View/img/logo_subir.png" width="100">
 
-			<footer class="row">
-				<section class="col-md-6">
-					<h4>Argenis Contreras | Derechos reserados 2016</h4>
-				</section>
-				<section class="col-md-6">
-					<h4>Diseño y Desarrollo por Odannys De La Cruz</h4>
-				</section>
-			</footer>
+				<input type="hidden" name="tabla" value="galeria">
 
-			<input type="submit" class="btn btn-primary btn-enviar">
-			
+				<input type="file" name="imagen" class="item_subir_imagen input-imagen form-control">
+				
+
+				<input type="submit" value="Subir" class="item_subir_imagen btn-subir-imagen btn btn-primary">
+
+			</section>
+
 		</form>
 
-	</section>
+	</section>	
 
-	<footer>
+	<section class="galeria">
 
-		<section class="col-xs-12 col-md-10"><h4>Argenis Contreras | Derechos reserados 2016</h4></section>
-		<section class="col-xs-12 col-md-10"><h4>Diseño y Desarrollo por Odannys De La Cruz</h4></section>
+	<?php  
+		
+		$imagenes = $Objeto->seleccionarImagen('galeria',null);
 
-	</footer>
+		foreach ($imagenes as $imagen) { ?>
+		<div class="item_galeria">
+			
+			<img class="" src="View/img/galeria/<?php echo $imagen['imagen']; ?>">
 
+			<a class="content-eliminar" href="eliminar_imagen_galeria.php?id=<?php echo $imagen['id']; ?>">
+				<div>
+					<img src="View/img/eliminar.png" class="btn-eliminar">
+				</div>
+			</a>
+
+		</div>
+
+	<?php }	?>
+		
+	</section>	
 	
 </section>
 	

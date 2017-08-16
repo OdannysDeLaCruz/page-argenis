@@ -1,3 +1,10 @@
+<?php 
+include_once('Model/procesarDatosModel.php');
+$Objeto = new procesarDatos();
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,11 +57,13 @@
 			
 			<section class="row seccion_subir_imagen text-center">
 					
-				<h1 class="item_subir_imagen">Subir imagen</h1>
+				<img class="item_subir_imagen logo_subir" src="View/img/logo_subir.png" width="100" alt="">
 
-				<input type="file" name="imagen" class="item_subir_imagen imagen form-control">
-
-				<input type="text" name="id" value="<?php echo $id; ?>">
+				<input type="file" name="imagen" class="item_subir_imagen input-imagen form-control">
+				
+				<!-- Input que manda un id oculto -->
+				<input type="hidden" name="tabla" value="imagenes_cargadas">
+				<input type="hidden" name="id" value="<?php echo $id; ?>">
 
 				<input type="submit" value="Subir" class="item_subir_imagen boton_enviar btn btn-primary">
 
@@ -63,20 +72,26 @@
 		</form>
 
 	</section>
-	<section class="row">
-		 <section class="col-sm-10 col-md-10 imagenes_subidas">
-		 	
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
-			<img class="item_imagen" src="View/img/fondo-instrumentos.jpg" alt="">
+	<section class="imagenes_subidas">
+		<div class="texto-subidas">
+		
+			<h1 class="item_texto">Imagenes subidas</h1>
+			<hr>
 			
-		 </section>
+		</div>
+		<div class="imagenes">
+			
+
+		<?php  
+		// Mando null, para que me reciba un valor nulo y me mande todas las imagenes, por defecto no es null.
+		$imagenes = $Objeto->seleccionarImagen('imagenes_cargadas',null);
+		foreach ($imagenes as $imagen) { ?>
+
+		<img class="item_imagen" src="View/img/<?php echo $imagen['nombre_imagen'] ?>">
+
+		<?php }	?>
+		</div>
+			
 	</section>
 
 	

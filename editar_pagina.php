@@ -111,15 +111,21 @@ $misVideos = $Objeto->seleccionarVideos(2);
 						<?php } ?>						
 			
 					</section>
+<!-- Obetener imagenes de secciones -->
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',1);
+
+ ?>
+				<?php foreach ($misImagenes as $imagen) { ?>		
 
 					<section class="row cambiar-imagen-fondo text-center">
-						
-						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-header" alt="imagen">
+							
+						<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="fondo-header" alt="imagen">
+						<p><?php echo $imagen['nombre_imagen']; ?></p>						
 
-						<p>Nombre de la imagen que quiere en esta seccion (Principal), por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" name="imagen-header-fondo" class="imagen-header-fondo form-control">
 
 					</section>				
+				 <?php } ?>
 
 				</section> <!-- FIN CONTENIDO HEADER -->
 			
@@ -159,17 +165,23 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',3);
 					<p class="text-left">Separe el listado con dos puntos ( : )</p>
 					<input type="text" class="listado-cinco-musicos form-control" name="listado-cinco-musicos" value="<?php echo $datos['mensaje']; ?>">
 
+			<?php } ?>
+<!-- Obetener imagenes de secciones -->
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',2);
+
+				foreach ($misImagenes as $imagen) { ?>
+
 					<section class="cambiar-imagen-fondo">
 
-						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-cinco-musicos" alt="imagen">
-						
-						<p>Nombre de la imagen que quiere en esta seccion (5 Musicos)por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" name="imagen-cinco-musicos" class="imagen-cinco-musicos form-control">
-
+						<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="fondo-cinco-musicos" alt="imagen">
+						<p><?php echo $imagen['nombre_imagen']; ?></p>
 					</section>
 
+				<?php } ?>
+
+
 				</section>
-			<?php } ?>
 				<section class="col-md-6 videos-cinco-musicos text-center">
 
 <?php 
@@ -274,16 +286,21 @@ $misVideos = $Objeto->seleccionarVideos(8);
 					<p class="text-left">Separe el listado con dos puntos( : )</p>
 					<input type="text" class="listado-grupo-completo form-control" name="listado-grupo-completo" value="<?php echo $datos['mensaje']; ?>">
 					
+			<?php } ?>
+<!-- Obetener imagenes de secciones -->
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',3);
+
+				foreach ($misImagenes as $imagen) { ?>
+
 					<section class="cambiar-imagen-fondo .grupo-completo">
 
-						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-grupo-completo" alt="imagen">
-
-						<p>Nombre de la imagen que quiere en esta sección (Grupo Completo), por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-grupo-completo form-control" name="imagen-grupo-completo">
+						<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="fondo-grupo-completo" alt="imagen">
+						<p><?php echo $imagen['nombre_imagen']; ?></p>
 
 					</section>
+				<?php } ?>
 				</section>
-			<?php } ?>
 			</section> <!-- FIN GRUPO COMPLETO -->
 
 			<!-- SECCION VALLENATO CON GUITARRA -->
@@ -306,20 +323,24 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',5);
 					<p class="text-left">Separe el listado con dos puntos ( : )</p>
 					<input type="text" class="listado-vallenato-guitarra form-control" name="listado-vallenato-guitarra" value="<?php echo $datos['mensaje']; ?>">
 					
+<!-- Obetener imagenes de secciones -->
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',4);
+
+				foreach ($misImagenes as $imagen) { ?>
+
 					<section class="cambiar-imagen-fondo">
 
-
-						<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-vallenato-guitarra" alt="imagen">
-						
-						<p>Nombre de la imagen que quiere en esta sección (Vallenato Con Guitarra), por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-vallenato-guitarra form-control" name="imagen-vallenato-guitarra">
+						<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="fondo-vallenato-guitarra" alt="imagen">
+						<p><?php echo $imagen['nombre_imagen']; ?></p>
 
 					</section>
+				<?php } ?>
 
 				</section>
 				<section class="col-md-6 videos-vallenato-guitarra text-center">
 
-					<?php 
+<?php 
 $misVideos = $Objeto->seleccionarVideos(9);
  ?>
  					<?php foreach ($misVideos as $videos) { ?>
@@ -449,13 +470,17 @@ $misVideos = $Objeto->seleccionarVideos(17);
 					</section>
 					<?php } ?>
 				</section>	 
-				<section class="row cambiar-imagen-fondo-mas-temas">
+<!-- Obetener imagenes de secciones -->
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',5);
 
-					<img src="View/img/<?php echo $datos['img_fondo'] ?>" class="fondo-mas-temas" alt="imagen">
+				foreach ($misImagenes as $imagen) { ?>
+					<section class="row cambiar-imagen-fondo-mas-temas">
+						<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="fondo-vallenato-guitarra" alt="imagen">
+						<p><?php echo $imagen['nombre_imagen']; ?></p>
+					</section>	
 
-					<p>Nombre de la imagen que quiere en esta sección (Mas Temas), por ej: (imagen.jpg ó imagen.png)</p>
-					<input type="text" class="imagen-mas-temas form-control" name="imagen-mas-temas">
-				</section>	
+				<?php } ?>
 			</section>
 			<!-- FIN MAS TEMAS -->
 
@@ -523,16 +548,19 @@ $misDatos = $Objeto->seleccionar('contacto','id',3);
 				<section class="col-md-3">
 					<section class="cambiar-imagen-fondo">
 						<input type="text" class="red-social-1 form-control" name="red-social-1" value="<?php echo $datos['nomb_usu']; ?>"><br>
+				<?php } ?>
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',6);
+				foreach ($misImagenes as $imagen) {
+				
+ ?>
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="logos-redes" alt="imagen">
+					<p><?php echo $imagen['nombre_imagen']; ?></p>
 
-						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
-
-						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-red-social-1 form-control" name="imagen-red-social-1">
-
+				<?php } ?>
 					</section>
 				</section>
 
-				<?php } ?>
  <?php 
 $misDatos = $Objeto->seleccionar('contacto','id',4);
  ?>
@@ -542,15 +570,21 @@ $misDatos = $Objeto->seleccionar('contacto','id',4);
 					<section class="cambiar-imagen-fondo">
 						<input type="text" class="red-social-2 form-control" name="red-social-2" value="<?php echo $datos['nomb_usu']; ?>"><br>
 
-						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
+				<?php } ?>
 
-						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-red-social-2 form-control" name="imagen-red-social-2">
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',7);
+				foreach ($misImagenes as $imagen) {
+				
+ ?>
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="logos-redes" alt="imagen">
+					<p><?php echo $imagen['nombre_imagen']; ?></p>
+
+				<?php } ?>
 
 					</section>
 				</section>
 
-				<?php } ?>
  <?php 
 $misDatos = $Objeto->seleccionar('contacto','id',5);
  ?>
@@ -560,15 +594,20 @@ $misDatos = $Objeto->seleccionar('contacto','id',5);
 					<section class="cambiar-imagen-fondo">
 						<input type="text" class="red-social-3 form-control" name="red-social-3" value="<?php echo $datos['nomb_usu']; ?>"><br>
 
-						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
+				<?php } ?>
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',8);
+				foreach ($misImagenes as $imagen) {
+				
+ ?>
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="logos-redes" alt="imagen">
+					<p><?php echo $imagen['nombre_imagen']; ?></p>
 
-						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-red-social-3 form-control" name="imagen-red-social-3">
+				<?php } ?>
 
 					</section>
 				</section>
 
-				<?php } ?>
  <?php 
 $misDatos = $Objeto->seleccionar('contacto','id',6);
  ?>
@@ -578,15 +617,21 @@ $misDatos = $Objeto->seleccionar('contacto','id',6);
 					<section class="cambiar-imagen-fondo">
 						<input type="text" class="red-social-4 form-control" name="red-social-4" value="<?php echo $datos['nomb_usu']; ?>"><br>
 
-						<img src="View/img/<?php echo $datos['nombre_logo'] ?>" class="logos-redes" alt="imagen">
+			<?php } ?>
 
-						<p>Nombre de la imagen de la red social aquí, por ej: (imagen.jpg ó imagen.png)</p>
-						<input type="text" class="imagen-red-social-4 form-control" name="imagen-red-social-4">
+<?php 
+$misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',9);
+				foreach ($misImagenes as $imagen) {
+				
+ ?>
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>" class="logos-redes" alt="imagen">
+					<p><?php echo $imagen['nombre_imagen']; ?></p>
+
+				<?php } ?>
 
 					</section>
 				</section>
 
-			<?php } ?>
 
 			</section>
 
@@ -619,7 +664,7 @@ $misDatos = $Objeto->seleccionar('contacto','id',2);
 				</section>
 			</footer>
 
-			<input type="submit" class="btn btn-primary btn-enviar">
+			<input type="submit" value="Enviar" class="btn btn-primary btn-enviar">
 			
 		</form> <!--FIN FORMULARIO DENTRO DE PANEL DE EDICION -->
 		

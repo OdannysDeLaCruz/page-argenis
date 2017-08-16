@@ -91,56 +91,148 @@ class procesarDatos extends Conexion {
 
 	}
 
-	public function subirImg($imagen_nombre,$imagen_tmp,$imagen_error)
+	public function subirImg($imagen_nombre,$imagen_tamano,$imagen_tipo,$imagen_tmp,$imagen_error)
 	{
 
 		if ((isset($imagen_nombre) && ($imagen_error == UPLOAD_ERR_OK))) 
 		{
+			$error = 5; //Exitoso
 
-			$destino_de_ruta = "../View/img/";
-			//ruta de la carpeta destino en servidor
+			if ($imagen_tamano <= 5000000) 
+			{
 
-			//Movemos la imagen del directorio temporal a la carpeta destino
+				if ($imagen_tipo == "image/jpeg" || $imagen_tipo == "image/jpg" || $imagen_tipo == "image/png") 
+				{
+				
+					$destino_de_ruta = "../View/img/";;
+					//ruta de la carpeta destino en servidor
 
-			move_uploaded_file($imagen_tmp,$destino_de_ruta.$imagen_nombre);
+					//Movemos la imagen del directorio temporal a la carpeta destino
 
-			echo "El archivo " . $imagen_nombre . " se ha cargado correctamente";
+					move_uploaded_file($imagen_tmp,$destino_de_ruta.$imagen_nombre);
+
+					return $error; //Exitoso
+
+				}
+				else
+				{
+					return $error = 6; //tipo de archivo erroneo
+				}
+
+				
+			}
+			else
+			{
+				return $error = 7;//Tamaño de archivo excedido
+			}
 
 		}
 
 		elseif ($imagen_error)
 		{
-
 			switch ($imagen_error) 
 
 			{
 
 				case 1:	//El fichero subido excede la directiva upload_max_filesize de php.ini.
 
-					echo "El fichero subido excede el tamaño permitido.";
+					// echo "El fichero subido excede el tamaño permitido.";
+					return $imagen_error;
 					break;
 
 				case 2://El fichero subido excede la directiva MAX_FILE_SIZE especificada en el formulario HTML.
 
-					echo "El fichero subido excede el tamaño permitido.";
+					// echo "El fichero subido excede el tamaño permitido.";
+					return $imagen_error;
 					break;
 				case 3: //El fichero fue sólo parcialmente subido. 
 
-					echo "El envio del archivo fue interrumpida, intentelo de nuevo";
+					// echo "El envio del archivo fue interrumpida, intentelo de nuevo";
+					return $imagen_error;
 					break;
 
 				case 4: //No se subió ningún fichero.
 
-					echo "No se subió ningún fichero.";
+					// echo "No se subió ningún fichero.";
+					return $imagen_error;
 					break;
 
 			}
 		}
 	}
 
-	public function subirImagen($imagen,$id)
+	public function subirGaleria($imagen_nombre,$imagen_tamano,$imagen_tipo,$imagen_tmp,$imagen_error)
 	{
-		echo $imagen . $id;
+
+
+		if ((isset($imagen_nombre) && ($imagen_error == UPLOAD_ERR_OK))) 
+		{
+			$error = 5; //Exitoso
+
+			if ($imagen_tamano <= 5000000) 
+			{
+
+				if ($imagen_tipo == "image/jpeg" || $imagen_tipo == "image/jpg" || $imagen_tipo == "image/png") 
+				{
+				
+					$destino_de_ruta = '../View/img/galeria/';
+					//ruta de la carpeta destino en servidor
+
+					//Movemos la imagen del directorio temporal a la carpeta destino
+
+					move_uploaded_file($imagen_tmp,$destino_de_ruta.$imagen_nombre);
+
+					return $error; //Exitoso
+
+				}
+				else
+				{
+					return $error = 6; //tipo de archivo erroneo
+				}
+
+				
+			}
+			else
+			{
+				return $error = 7;//Tamaño de archivo excedido
+			}
+
+		}
+
+		elseif ($imagen_error)
+		{
+			switch ($imagen_error) 
+
+			{
+
+				case 1:	//El fichero subido excede la directiva upload_max_filesize de php.ini.
+
+					// echo "El fichero subido excede el tamaño permitido.";
+					return $imagen_error;
+					break;
+
+				case 2://El fichero subido excede la directiva MAX_FILE_SIZE especificada en el formulario HTML.
+
+					// echo "El fichero subido excede el tamaño permitido.";
+					return $imagen_error;
+					break;
+				case 3: //El fichero fue sólo parcialmente subido. 
+
+					// echo "El envio del archivo fue interrumpida, intentelo de nuevo";
+					return $imagen_error;
+					break;
+
+				case 4: //No se subió ningún fichero.
+
+					// echo "No se subió ningún fichero.";
+					return $imagen_error;
+					break;
+
+			}
+		}
+	}
+	public function actualizarImg($imagen,$id)
+	{
 
 		$sql = "UPDATE imagenes_cargadas SET nombre_imagen=:nombre_imagen WHERE id=:id";
 		$sentencia = $this->conn->prepare($sql);
@@ -149,6 +241,55 @@ class procesarDatos extends Conexion {
 		//Cerrar el cursor de la tabla virtual
 		$sentencia->closeCursor();
 
+	}
+
+	public function insertarGaleria($imagen)
+	{
+		$sql = "INSERT INTO galeria (imagen) VALUES (:imagen)";
+		$sentencia = $this->conn->prepare($sql);
+		$sentencia->bindParam(':imagen',$imagen);
+		$sentencia->execute();
+
+		$sentencia->closeCursor();
+	}
+
+	public function eliminarGaleria($id)
+	{
+		$sql = "DELETE FROM galeria WHERE id=:id";
+		$sentencia = $this->conn->prepare($sql);
+		$sentencia->bindParam(':id',$id);
+		$sentencia->execute();
+		$sentencia->closeCursor();
+	}
+
+	public function seleccionarImagen($tabla,$id)
+	{
+		if ($id != null)
+		{
+			$sql = "SELECT * FROM $tabla WHERE id = $id";
+			$sentencia = $this->conn->prepare($sql);
+			$sentencia->execute(array());
+
+			$misDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+			return $misDatos;
+
+			$sentencia->closeCursor();
+		}
+		else
+		{
+			$sql = "SELECT * FROM $tabla";
+			$sentencia = $this->conn->prepare($sql);
+			$sentencia->execute(array());
+
+			$misDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+			return $misDatos;
+
+			$sentencia->closeCursor();
+		}
+
+		
 	}
 
 

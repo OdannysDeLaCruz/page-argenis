@@ -1,3 +1,9 @@
+<?php 
+include_once('Model/procesarDatosModel.php');
+$Objeto = new procesarDatos();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,51 +46,72 @@
 	<section class="col-md-10 panel-edicion">
 
 		<section class="opciones">
+
 			<section class="items_opciones">
-				<input type="text" value="1">
-				<p class="items">Sección Principal</p>
-				<a class="items" href="subir.php?id=1"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="1">
+				<p class="items">Principal</p>
+				<a class="items" href="subir.php?id=1"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
 			<section class="items_opciones">
-				<input type="text" value="2">
-				<p class="items">Sección Cinco Musicos</p>
-				<a class="items" href="subir.php?id=2"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="2">
+				<p class="items">Cinco Musicos</p>
+				<a class="items" href="subir.php?id=2"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
 			<section class="items_opciones">
-				<input type="text" value="3">
-				<p class="items">Sección Grupo Completo</p>
-				<a class="items" href="subir.php?id=3"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="3">
+				<p class="items">Grupo Completo</p>
+				<a class="items" href="subir.php?id=3"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
 			<section class="items_opciones">
-				<input type="text" value="4">
-				<p class="items">Sección vallenato Con Guitarra</p>
-				<a class="items" href="subir.php?id=4"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
-			 </section>
-			<section class="items_opciones">
-				<input type="text" value="5">
-				<p class="items">Sección Mas Temas</p>
-				<a class="items" href="subir.php?id=5"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="4">
+				<p class="items">Vallenato Con Guitarra</p>
+				<a class="items" href="subir.php?id=4"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
 			<section class="items_opciones">
-				<input type="text" value="6">
-				<p class="items">Sección Red Social 1</p>
-				<a class="items" href="subir.php?id=6"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="5">
+				<p class="items">Mas Temas</p>
+				<a class="items" href="subir.php?id=5"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
+<?php 
+$titulos = $Objeto->seleccionar('contacto','id',3);
+		foreach ($titulos as $titulo) { ?>
+
 			<section class="items_opciones">
-				<input type="text" value="7">
-				<p class="items">Sección Red Social 2</p>
-				<a class="items" href="subir.php?id=7"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="6">
+				<p class="items"><?php echo $titulo['nomb_usu']; ?></p>
+				<a class="items" href="subir.php?id=6"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
+		<?php } ?>
+<?php 
+$titulos = $Objeto->seleccionar('contacto','id',4);
+		foreach ($titulos as $titulo) { ?>
+
 			<section class="items_opciones">
-				<input type="text" value="8">
-				<p class="items">Sección Red Social 3</p>
-				<a class="items" href="subir.php?id=8"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="7">
+				<p class="items"><?php echo $titulo['nomb_usu']; ?></p>
+				<a class="items" href="subir.php?id=7"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
+		<?php } ?>
+<?php 
+$titulos = $Objeto->seleccionar('contacto','id',5);
+		foreach ($titulos as $titulo) { ?>
+
 			<section class="items_opciones">
-				<input type="text" value="9">
-				<p class="items">Sección Red Social 4</p>
-				<a class="items" href="subir.php?id=9"><button class="btn btn-primary btn-cambiar">Cambiar imagen</button></a>
+				<input type="hidden" value="8">
+				<p class="items"><?php echo $titulo['nomb_usu']; ?></p>
+				<a class="items" href="subir.php?id=8"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
 			</section>
+		<?php } ?>
+<?php 
+$titulos = $Objeto->seleccionar('contacto','id',6);
+		foreach ($titulos as $titulo) { ?>
+
+			<section class="items_opciones">
+				<input type="hidden" value="9">
+				<p class="items"><?php echo $titulo['nomb_usu']; ?></p>
+				<a class="items" href="subir.php?id=9"><img src="View/img/logo_cambiar.png" width="50" alt=""></a>
+			</section>
+		<?php } ?>
 		</section>
 
 	</section>

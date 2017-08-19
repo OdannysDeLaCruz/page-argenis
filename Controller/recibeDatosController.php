@@ -211,6 +211,8 @@ if ($_POST) {
 	$numero_tel_2 = $_POST['numero-telefono-2'];
 	$objeto->editarContacto($numero_tel_2,null,2);
 
+	header('location:../View/datosGuardados.php');
+
 }
 
 

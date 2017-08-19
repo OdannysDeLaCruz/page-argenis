@@ -1,3 +1,7 @@
+<?php 
+include_once('Model/procesarDatosModel.php');
+$Objeto = new procesarDatos();
+ ?>
 
 <!DOCTYPE html>
 <html lang="Es">
@@ -10,396 +14,645 @@
 	<link rel="stylesheet" href="View/css/mis-estilos.css"/>
 </head>
 <body>
-<!-- INICIO HEADER -->
-	
 <header id="inicio">
-		<section class="capa-oscura"></section>
-		<section class="row contacto text-right">
-			<img alt="Whatsapp" src='./View/img/logo-whatsapp.png'/>
-			<p class="fuente-playfair">Bogota, Dc (+57) 300 616 5561 - 320 230 26 50</p>
+<!-- IMAGEN DE FONDO DEL HEADER  -->
+<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',1);
+foreach ($misImagenes as $imagen) { ?>
+
+<img class="fondo-header" src="View/img/<?php echo $imagen['nombre_imagen'];?>">
+
+<?php } ?>
+<!-- Numeros de telefonos de contacto -->
+
+
+	<section class="capa-oscura"></section>
+	<section class="row contacto text-right">
+		<img alt="Whatsapp" src="View/img/logo-whatsapp.png" />
+		<p class="fuente-playfair">
+
+
+		Bogota, Dc (+57) 
+
+<?php $misDatos = $Objeto->seleccionar('contacto','id',1); 
+		foreach ($misDatos as $datos){ 
+		echo $datos['tel']; 
+ } ?>
+
+		- 
+
+<?php $misDatos = $Objeto->seleccionar('contacto','id',2); 
+		foreach ($misDatos as $datos){ 
+		echo $datos['tel']; 
+ } ?>
+
+		<!-- Bogota, Dc (+57) 300 616 5561 - 320 230 26 50 -->
+
+		</p>
+	</section>
+
+
+	<!-- Boton flotante subir (^) en la pagina -->
+
+	<?php
+	    include_once ("View/menu-principal.php");
+	    include_once ("View/boton_subir.php");
+     ?>
+	
+<!-- TITULO, SUBTITULO Y MENSAJES DEL HEADER -->
+<?php $misDatos = $Objeto->seleccionar('contenido','id_c',1);
+foreach ($misDatos as $datos) { ?>
+	<section class="row titulo text-right">
+
+		<section class="col-md-12 col-lg-12 titulo-subtitulo">
+			<h1 class="fuente-oleo-script text-center"><?php echo $datos['titulo'] ?></h1>
+
+			<h4 class="fuente-playfair text-center"><?php echo $datos['subtitulo'] ?></h4>
+
+			<hr class="separador1" />
 		</section>
-
-	<?php  include_once ("View/menu-principal.php");?>
-
-		<section class="row titulo text-right">
-			<section class="col-md-11 col-lg-9 titulo-subtitulo">
-
-				<h1 class="fuente-oleo-script text-right">Argenis Contreras</h1>
-
-				<h4 class="fuente-playfair">Cantante, guitarrista y compositor</h4>
-
-				<hr class="separador1" />
-			</section>
-		</section>
+	</section>
 
 	<section class="row descripcion">
-	<section class="col-md-10 col-md-offset-1 col-sm-12 col-lg-7">
-	<p class="texto-descripcion fuente-playfair"><span>C</span>ordial saludo. Soy Argenis Contreras de San juan del cesar (Guajira); cantante guitarrista y compositor con mas de 15 a&ntilde;os de experiencia musical, dispuesto a brindarle a todos mis clientes un show vallenato, con calidad. Todas mis presentaciones van acompañadas con mi guitarra la cual se encarga de ponerle un sello único y original a mi organización.
-
-	Permítenos mostrarte un vallenato en su esencia, con un acordeón bien tocado con una interpretación propia de nuestra costa Caribe dándole a cada canción su sentido y su cadencia. Con una caja, una guacharaca y un bajo bien tocados.
-
-	Con mucho cariño les comparto dos canciones de mi autoría, con su video oficial espero les guste y las disfruten, muchas gracias. Costumbre sanjuanera es entregar el corazón.</p>
+		<div class="col-md-2"></div>
+		<section class="col-xs-12 col-sm-12 col-md-8">
+			<p class="texto-descripcion fuente-playfair">
+				<?php echo $datos['mensaje'] ?>
+			</p>
+		</section>
+		<div class="col-md-2"></div>
 	</section>
-	</section>
+<?php } ?>
 
-	<section class="row contenedor-videos-bienvenida">
+<section class="row contenedor-videos-bienvenida">
 	<section class="videos-bienvenidas">
-	<section class="col-md-3 col-md-offset-1 col-sm-6 col-xs-12 text-center"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/qnNwtliDaTA"></iframe>
 
-	<h3 class="fuente-playfair">Ya no lloraras- Argenis Contreras (Video oficial)</h3>
-	</section>
+<!-- VIDEOS DEL HEADER -->
+<!-- <?php //$misVideos = $Objeto->seleccionarVideos(1); ?>
 
-	<section class="col-md-3 col-md-offset-1 col-sm-6 col-xs-12 text-center"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/KDH4_LXl_iY"></iframe>
+	<?php //foreach ($misVideos as $videos) { ?>
 
-	<h3 class="fuente-playfair">Historia Sin final - Argenis Contreras (Video oficial)</h3>
-	</section>
-	</section>
-	</section>
+		<section class="col-md-6 col-sm-6 col-xs-12 text-center">
 
-	<section class="foto-flotante">
-	<figure><img alt="Argenis Contreras" class="hidden-sm hidden-xs hidden-md visible-lg" src="./View/img/argenis.png" /></figure>
-	</section>
-</header>
+			<?php //echo $videos['url'] ?>
 
-<!-- FIN HEADER -->
+			<h3 class="fuente-playfair"><?php //echo $videos['titulo'] ?></h3>
+		</section>
+	<?php //} ?>
 
-<!-- INICIO BOTON SUBIR -->
-
-	<?php include_once ("View/boton_subir.php"); ?>
-
-<!-- FIN BOTON SUBIR -->
-
-<!-- INICIO CONTENIDO PRINCIPAL -->
-
-<section class="contenido-principal" id="principal">
+<?php //$misVideos = $Objeto->seleccionarVideos(2); ?>
 	
-	<!-- INICIO TITULO DE PRESENTACION FORMATOS -->
+	<?php //foreach ($misVideos as $videos) { ?>
 
+		<section class="col-md-6 col-sm-6 col-xs-12 text-center">
+
+			<?php //echo $videos['url'] ?>
+
+			<h3 class="fuente-playfair"><?php //echo $videos['titulo'] ?></h3>
+		</section>
+
+	<?php //} ?>
+
+	</section> -->
+</section>
+
+</header>
+<!-- FIN HEADER -->
+<!-- INICIO DE CONTENIDO PRINCIPAL -->
+<section class="contenido-principal" id="principal">
+
+	<!-- seccion presentacion de formatos -->
 	<section class="row presentacion-formatos">
 		<section class="col-md-12">
-			<h2 class="fuente-playfair">&iquest;Que tipo de evento deseas?</h2>
+		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',2);
+			foreach ($misDatos as $datos) { ?>
+
+			<h2 class="fuente-playfair"><?php echo $datos['titulo'] ?></h2>
 
 			<hr class="separador2" />
-			<p class="fuente-playfair">Nuestra agrupaci&oacute;n cuenta con varios formatos musicales para brindarle a nuestros clientes la mejor opci&oacute;n para su evento.</p>
+
+			<p class="fuente-playfair"><?php echo $datos['mensaje'] ?></p>
+
+		<?php } ?>
+
 		</section>
 	</section>
+<!-- *************** 5 Musicos ****************** -->
 
-	<!-- FIN TITULO DE PRESENTACION FORMATOS -->
+<section class="row seccion-obciones cinco-musicos" id="cinco-musicos">
 
-	<!-- INICIO 5 MUSICOS -->
+
+	<section class="col-md-6 col-sm-6 col-xm-12 contenedor-img-cinco-musicos">
+
+		<section class="capa-cinco-musicos"></section>
 	
-	<section class="row seccion-obciones cinco-musicos" id="cinco-musicos">
-		<section class="col-md-6 col-sm-6 col-xm-12 contenedor-img-cinco-musicos">
-			<section class="capa-cinco-musicos"></section>
+		<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',2);
+		foreach ($misImagenes as $imagen) { ?>
 
-			<section class="texto-cinco-musicos">
-				<h1 class="fuente-playfair titulos">5 M&uacute;sicos</h1>
+			<img class="imagenes-fondos " src="View/img/<?php echo $imagen['nombre_imagen'];?>">
 
-				<h2 class="fuente-playfair subtitulos">Para eventos peque&ntilde;os, en apartamentos o reuniones familiares</h2>
-				&nbsp;
+		<?php } ?>
 
-				<ul>
-					<li class="fuente-playfair">5 integrantes</li>
-					<li class="fuente-playfair">Disponible para lugares peque&ntilde;os</li>
-				</ul>
-			</section>
+		<section class="texto-cinco-musicos">
+
+		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',3);
+			foreach ($misDatos as $datos) { ?>
+
+			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
+
+			<ul>
+
+				<?php
+
+				$listado = explode(":", $datos['mensaje']);
+				foreach ($listado as $listado) { ?>
+
+					<li class="fuente-playfair"><?php echo $listado; ?></li>
+
+				<?php } ?>
+
+			</ul>
+
+		<?php } ?>
+
 		</section>
-
-	<!-- <section class="col-md-6 col-sm-6 col-xm-12 videos-cinco-musicos">
-			<iframe src="https://www.youtube.com/embed/BdbcNguqamk" frameborder="0" allowfullscreen></iframe>
-			<h3 class="fuente-playfair">Cantor de fonseca- Argenis Contreras & Raul Ochoa - Jorge Oñate - autor: Carlos Huerta</h3>
-
-			<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/1sHJVMJoNlc"></iframe>
-			<h3 class="fuente-playfair">Luna Sanjuanera - Los hermanos Zuleta - Argenis Contreras &amp; Raul ochoa - autor: Roberto Calderon</h3>
-
-			<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/hOSmAeiSPZI"></iframe>
-			<h3 class="fuente-playfair">Medejo Solito - jorgito celedon - Argenis contreras &amp; Raul Ochoa - Autor Jorgito Celedon</h3>
-
-		</section>-->
 	</section>
 
-	<!-- FIN 5 MUSICOS -->
+	<section class="col-md-6 col-sm-6 col-xm-12 videos-cinco-musicos">
 
-	<!-- INICIO GRUPO COMPLETO -->
+		<div class="items-videos">
+			<?php $misVideos = $Objeto->seleccionarVideos(3);
+			foreach ($misVideos as $videos) { ?>
+			
+				<div><?php echo $videos['url']; ?></div>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+			
+			<?php } ?>
+		</div>
+		<div class="items-videos">
+			<?php $misVideos = $Objeto->seleccionarVideos(4);
+			foreach ($misVideos as $videos) { ?>
+				
+				<div><?php echo $videos['url']; ?></div>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
 
-	<section class="row seccion-obciones grupo-completo" id="grupo-completo">
-		<!-- <section class="col-md-6 col-sm-6 col-xm-12 videos-grupo-completo"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/wyJ0UpwLRjI"></iframe>
+			<?php } ?>
+		</div>
+		<div class="items-videos">
+			<?php $misVideos = $Objeto->seleccionarVideos(5);
+			foreach ($misVideos as $videos) { ?>
 
-		<h3 class="fuente-playfair">El nino bonito - Argenis Contreras - Cantante Vallenato</h3>
-		<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/ykwsCGYyP30"></iframe>
+				<div><?php echo $videos['url']; ?></div>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
 
-		<h3 class="fuente-playfair">Busca un Confidente - Los Diablitos - Alex Manga - Argenis Contreras</h3>
-		<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/xrUAmkynN3M"></iframe>
+			<?php } ?>
+		</div>
 
-		<h3 class="fuente-playfair">Tu vas a volar - Argenis contreras - cantante vallenato</h3>
-		</section> -->
+	</section>
+</section>
+<!-- ************** Grupo Completo ***************** -->
 
-		<section class="col-md-6 col-sm-6 col-xm-12 contenedor-img-grupo-completo">
-			<section class="capa-grupo-completo"></section>
+<section class="row seccion-obciones grupo-completo" id="grupo-completo">
 
-			<section class="texto-grupo-completo">
-			<h1 class="fuente-playfair titulos">Grupo Completo</h1>
+	<section class="col-md-6 col-sm-6 col-xm-12 videos-grupo-completo">
 
-			<h2 class="fuente-playfair subtitulos">Para eventos grandes empresariales &oacute; privados</h2>
+		<?php $misVideos = $Objeto->seleccionarVideos(6);
+		foreach ($misVideos as $videos) { ?>
+
+			<?php echo $videos['url']; ?>
+			<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
+		<?php $misVideos = $Objeto->seleccionarVideos(7);
+		foreach ($misVideos as $videos) { ?>
+			
+			<?php echo $videos['url']; ?>
+			<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
+		<?php $misVideos = $Objeto->seleccionarVideos(8);
+		foreach ($misVideos as $videos) { ?>
+
+			<?php echo $videos['url']; ?>
+			<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
+	</section>
+
+	<section class="col-md-6 col-sm-6 col-xm-12 contenedor-img-grupo-completo">
+		<section class="capa-grupo-completo"></section>
+
+		<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',3);
+		foreach ($misImagenes as $imagen) { ?>
+
+		<img class="imagenes-fondos" src="View/img/<?php echo $imagen['nombre_imagen'];?>">
+
+		<?php } ?>
+
+		<section class="texto-grupo-completo">
+
+		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',4);
+			foreach ($misDatos as $datos) { ?>
+
+			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+
+			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
 			&nbsp;
 
 			<ul>
-				<li class="fuente-playfair">10 &oacute; mas integrantes</li>
-				<li class="fuente-playfair">Salidas nacionales &eacute; internacionales</li>
-				<li class="fuente-playfair">Directamente en t&uacute; empresa.</li>
+				<?php
+
+				$listado = explode(":", $datos['mensaje']);
+				foreach ($listado as $listado) { ?>
+
+					<li class="fuente-playfair"><?php echo $listado; ?></li>
+
+				<?php } ?>
+				
 			</ul>
-			</section>
+
+		<?php } ?>
+
 		</section>
 	</section>
+</section>
+<!-- ************ Vallenato con Guitarra *************** -->
 
-	<!-- FIN GRUPO COMPLETO -->
-	<!-- INICIO VALLENATO CON GUITARRA -->
+<section class="row seccion-obciones vallenato-guitarra" id="guitarra">
+	<section class="col-md-6 col-sm-6 contenedor-img-vallenato-guitarra ">
+		<section class="capa-vallenato-guitarra"></section>
 
-	<section class="row seccion-obciones vallenato-guitarra" id="guitarra">
-		<section class="col-md-6 col-sm-6 contenedor-img-vallenato-guitarra">
-			<section class="capa-vallenato-guitarra"></section>
+		<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',4);
+		foreach ($misImagenes as $imagen) { ?>
 
-			<section class="texto-vallenato-guitarra">
-			<h1 class="fuente-playfair titulos">Vallenato con guitarra</h1>
+		<img class="imagenes-fondos" src="View/img/<?php echo $imagen['nombre_imagen'];?>">
 
-			<h2 class="fuente-playfair subtitulos">Para tu comodidad</h2>
-			&nbsp;
+		<?php } ?>
+
+		<section class="texto-vallenato-guitarra">
+
+		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',5);
+			foreach ($misDatos as $datos) { ?>
+
+			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+
+			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
 
 			<ul>
-				<li class="fuente-playfair">2 &oacute; mas integrantes</li>
-				<li class="fuente-playfair">Vallenato clasico romantico</li>
-				<li class="fuente-playfair">Vallenato parrandero</li>
-				<li class="fuente-playfair">Acompa&ntilde;ado de caja, bajo y guacharaca</li>
-				<li class="fuente-playfair">Lo mas importante, a tu gusto.</li>
+				<?php
+
+					$listado = explode(":", $datos['mensaje']);
+					foreach ($listado as $listado) { ?>
+
+						<li class="fuente-playfair"><?php echo $listado; ?></li>
+
+					<?php } ?>
 			</ul>
-			</section>
-		</section>
 
-		<!-- <section class="col-md-6 col-sm-6 col-xm-12 videos-vallenato-guitarra"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/8deXKtHwPHY"></iframe>
+		<?php } ?>
 
-		<h3 class="fuente-playfair">Mi Ultima Voluntad Fabian Corrales - Argenis Contreras - oscar Cantillo - Arelio (yeyo) nu&ntilde;ez</h3>
-		<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/zdbSPtR1rnk"></iframe>
-
-		<h3 class="fuente-playfair">Te Dedicos Mis Triunfos (Jorge O&ntilde;ate ) - Argenis Contreras</h3>
-		<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/j5yB2KbqlrM"></iframe>
-
-		<h3 class="fuente-playfair">Aqui estan tus canciones- Argenis Contreras- Ge&ntilde;o Gamez guitarrista de Silvestre Dangond</h3>
-		</section>-->
-	</section>
-
-	<!-- FIN VALLENATO CON GUITARRA -->
-
-	<!-- INICIO MAS VIDEOS -->
-
-	<section class="row" id="temas">
-		<section class="mas-videos">
-			<h2>MAS VIDEOS</h2>
-
-			<section class="capa-mas-videos"></section>
 		</section>
 	</section>
 
-	<section class="videos imagenes">
-		<section class="text-center">
-
-			<!-- <section class="row contenedor-videos">
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/RUVEz0OYIqk"></iframe>
-					<h3 class="fuente-playfair">El invierno pasado Argenis contreras</h3>
-				</section>
-
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/vTUHP2_7ZVg"></iframe>
-					<h3 class="fuente-playfair">Mi Guitarra Vieja Kaleth Morales</h3>
-				</section>
-
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/pK4HnQ9XEoY"></iframe>
-					<h3 class="fuente-playfair">No pude quitarte las espinas Argenis Contreras</h3>
-				</section>
-			</section>
-
-			<section class="row contenedor-videos">
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/8sDtChqGePE"></iframe>
-					<h3 class="fuente-playfair">El pasado es pasado - Argenis contreras</h3>
-				</section>
-
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/gOaYPgZmThA"></iframe>
-					<h3 class="fuente-playfair">Que me puedas amar Argenis contreras</h3>
-				</section>
-
-				<section class="col-xs-12 col-sm-6 col-md-4">
-					<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/iosLp1XWFfg"></iframe>
-					<h3 class="fuente-playfair">La Suerte Esta Hechada Argenis Contreras Y Damir Gomez</h3>
-				</section>
-			</section> -->
-		</section>
-	</section>
-
-	<!-- FIN MAS VIDEOS -->
-
-	<!-- INICIO OPINION CLIENTES -->
-
+	<section class="col-md-6 col-sm-6 col-xm-12 videos-vallenato-guitarra">
 	
-	<section class="row opinion-clientes">
-		<h1>LO QUE OPINAN MIS CLIENTES</h1>
+	<?php $misVideos = $Objeto->seleccionarVideos(9);
+	foreach ($misVideos as $videos) { ?>
+
+		<?php echo $videos['url']; ?>
+		<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+	<?php } ?>
+
+	<?php $misVideos = $Objeto->seleccionarVideos(10);
+	foreach ($misVideos as $videos) { ?>
+		
+		<?php echo $videos['url']; ?>
+		<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+	<?php } ?>
+
+	<?php $misVideos = $Objeto->seleccionarVideos(11);
+	foreach ($misVideos as $videos) { ?>
+
+		<?php echo $videos['url']; ?>
+		<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+	<?php } ?>
+
+	</section>
+	</section>
+<!-- ************ Seccion mas videos ************ -->
+
+<section class="row" id="temas">
+	<section class="mas-videos">
+
+	<?php $misDatos = $Objeto->seleccionar('contenido','id_c',6);
+			foreach ($misDatos as $datos) { ?>
+
+		<h2><?php echo $datos['titulo']; ?></h2>
+
+		<section class="capa-mas-videos"></section>
+	<?php } ?>
+	</section>
+</section>
+<!-- *********************************************** -->
+
+<section class="contenedor-videos">
+
+	<section class="items-videos-temas">
+
+		<?php $misVideos = $Objeto->seleccionarVideos(12);
+			foreach ($misVideos as $videos) { ?>
+
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
 	</section>
 
-	<section class="papel-roto">
-		<figure><img alt="" class="img-responsive" src="./View/img/papel-roto.png" /></figure>
+	<section class="items-videos-temas">
+
+		<?php $misVideos = $Objeto->seleccionarVideos(13);
+			foreach ($misVideos as $videos) { ?>
+
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
 	</section>
 
-	<section class="row banner-comentarios">
-		<section class="container carousel slide" data-ride="carousel" id="myCarousel"><!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-				<li data-slide-to="1" data-target="#myCarousel"></li>
-				<li data-slide-to="2" data-target="#myCarousel"></li>
-				<li data-slide-to="3" data-target="#myCarousel"></li>
-			</ol>
-			<!-- Wrapper for slides -->
+	<section class="items-videos-temas">
 
-			<section class="carousel-inner" role="listbox">
-				<section class="item active">
-					<article>
-						<p class="fuente-playfair"><span class="comillas">&quot;</span> Es un gran cantante, responsable y muy comprometido con sus toques. <span class="comillas">&quot;</span></p>
-					</article>
+		<?php $misVideos = $Objeto->seleccionarVideos(14);
+			foreach ($misVideos as $videos) { ?>
 
-					<p>Julian Camargo</p>
-				</section>
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
 
-				<section class="item">
-					<article>
-						<p class="fuente-playfair"><span class="comillas">&quot;</span> Sus parrandas son llenas de energ&iacute;a y sabor, sabe como hacer gozar las fiestas a las personas.<span class="comillas">&quot;</span></p>
-					</article>
+		<?php } ?>
 
-					<p>Carmen Mej&iacute;a</p>
-				</section>
+	</section>
 
-				<section class="item">
-					<article>
-						<p class="fuente-playfair"><span class="comillas">&quot;</span> Su equipo es muy entregado y hacen que uno sienta la fiesta en donde quiera que van. <span class="comillas">&quot;</span></p>
-					</article>
+	<section class="items-videos-temas">
 
-					<p>Jose Carranza</p>
-				</section>
+		<?php $misVideos = $Objeto->seleccionarVideos(15);
+			foreach ($misVideos as $videos) { ?>
 
-				<section class="item">
-					<article>
-						<p class="fuente-playfair"><span class="comillas">&quot;</span> Una gran voz y una excelente agrupaci&oacute;n, responsable y lleno de energ&iacute;a siempre.<span class="comillas">&quot;</span></p>
-					</article>
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
 
-					<p>Mar&iacute;a Del Carmen</p>
-				</section>
-			</section>
-			<!-- Left and right controls -->
-			<a class="left carousel-control" data-slide="prev" href="#myCarousel" role="button">
-				<span class="sr-only">Previous</span> 
-			</a>
-		    <a class="right carousel-control" data-slide="next" href="#myCarousel" role="button"> 
-		    	<span class="sr-only">Next</span>
-		    </a>
+		<?php } ?>
+
+	</section>
+
+	<section class="items-videos-temas">
+
+		<?php $misVideos = $Objeto->seleccionarVideos(16);
+			foreach ($misVideos as $videos) { ?>
+
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
+	</section>
+
+	<section class="items-videos-temas">
+
+		<?php $misVideos = $Objeto->seleccionarVideos(17);
+			foreach ($misVideos as $videos) { ?>
+
+				<?php echo $videos['url']; ?>
+				<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
+
+		<?php } ?>
+
+	</section>
+
+</section>
+<!-- ************************************************ -->
+
+<section class="row opinion-clientes">
+<h1>LO QUE OPINAN MIS CLIENTES</h1>
+</section>
+
+<section class="papel-roto">
+<figure><img class="img-responsive" src="View/img/papel-roto.png" /></figure>
+</section>
+
+<section class="row banner-comentarios">
+<section class="container carousel slide" data-ride="carousel" id="myCarousel"><!-- Indicators -->
+<ol class="carousel-indicators">
+	<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+	<li data-slide-to="1" data-target="#myCarousel"></li>
+	<li data-slide-to="2" data-target="#myCarousel"></li>
+	<li data-slide-to="3" data-target="#myCarousel"></li>
+</ol>
+<!-- Wrapper for slides -->
+
+<section class="carousel-inner" role="listbox">
+
+	<section class="item active">
+	<?php 
+		$misDatos = $Objeto->seleccionar('opiniones','id_o',1);
+		foreach ($misDatos as $datos) { ?>
+			<article>
+				<p class="fuente-playfair"><span class="comillas"></span> <?php echo $datos['opinion'] ?><span class="comillas">&quot;</span></p>
+			</article>
+
+			<p><?php echo $datos['opinador']; ?></p>
+
+	<?php } ?>
+
+	</section>
+
+	<section class="item">
+	<?php 
+		$misDatos = $Objeto->seleccionar('opiniones','id_o',2);
+		foreach ($misDatos as $datos) { ?>
+			<article>
+				<p class="fuente-playfair"><span class="comillas"></span> <?php echo $datos['opinion'] ?><span class="comillas">&quot;</span></p>
+			</article>
+
+			<p><?php echo $datos['opinador']; ?></p>
+
+	<?php } ?>
+		</section>
+
+	<section class="item">
+	<?php 
+		$misDatos = $Objeto->seleccionar('opiniones','id_o',3);
+		foreach ($misDatos as $datos) { ?>
+			<article>
+				<p class="fuente-playfair"><span class="comillas"></span> <?php echo $datos['opinion'] ?><span class="comillas">&quot;</span></p>
+			</article>
+
+			<p><?php echo $datos['opinador']; ?></p>
+
+	<?php } ?>
+	</section>
+
+	<section class="item">
+	<?php 
+		$misDatos = $Objeto->seleccionar('opiniones','id_o',4);
+		foreach ($misDatos as $datos) { ?>
+			<article>
+				<p class="fuente-playfair"><span class="comillas"></span> <?php echo $datos['opinion'] ?><span class="comillas">&quot;</span></p>
+			</article>
+
+			<p><?php echo $datos['opinador']; ?></p>
+
+	<?php } ?>
+	</section>
+</section>
+
+<!-- Left and right controls --><a class="left carousel-control" data-slide="prev" href="#myCarousel" role="button"><span class="sr-only">Previous</span> </a> <a class="right carousel-control" data-slide="next" href="#myCarousel" role="button"> <span class="sr-only">Next</span> </a></section>
+</section>
+
+<section class="papel-roto">
+<figure><img alt="" class="img-responsive" src="View/img/papel-roto-rotado.png" /></figure>
+</section>
+
+<section class="redes-sociales" id="contacto">
+	<section class="row">
+		<section class="col-md-12 text center">
+			<h3 class="fuente-playfair">Sigueme en</h3>
 		</section>
 	</section>
 
-	<section class="papel-roto">
-		<figure><img alt="" class="img-responsive" src="./View/img/papel-roto-rotado.png" /></figure>
-	</section>
+	<section class="row iconos-redes-sociales text-center">
 
-	<!-- FIN OPINION CLIENTES -->
+		
 
-	<!-- INICIO REDES SOCIALES -->
+		<section class="col-xs-12 col-sm-3 col-md-3">
+			<section class="item-redes-sociales">
+
+			<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',6);
+			  foreach ($misImagenes as $imagen) { ?>
+				
+				<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>"/>				
+
+			<?php } ?>
+
+			 <?php $misDatos = $Objeto->seleccionar('contacto','id',3);
+			 	foreach ($misDatos as $datos) {
+
+			 	 echo $datos['nomb_usu'];
+			 	}
+
+ 				?>
 	
-	<section class="redes-sociales" id="contacto">
-		<section class="row">
-			<section class="col-md-12 text center">
-				<h3 class="fuente-playfair">Sigueme en</h3>
+			
 			</section>
 		</section>
 
-		<section class="row iconos-redes-sociales text-center">
-			<section class="col-xs-12 col-sm-3 col-md-3">
-				<section class="item-redes-sociales">
-					<a href="https://www.facebook.com/argenisrafael.contrerasrangel?fref=ts" target="_blank">
-					<img alt="sigueme en facebook" src="./View/img/logo-face.png" title="siguenos en Facebook" />Argenis Contreras</a>
-				</section>
-			</section>
 
-			<section class="col-xs-12 col-sm-3 col-md-3">
-				<section class="item-redes-sociales">
-					<img alt="sigueme en instagram" src="./View/img/logo-instagram.png" title="sigueme en Instagram" />@ArgenisContreraz
-				</section>
-			</section>
+		<section class="col-xs-12 col-sm-3 col-md-3">
+			<section class="item-redes-sociales">
 
-			<section class="col-xs-12 col-sm-3 col-md-3">
-				<section class="item-redes-sociales">
-					<img alt="sigueme en Twitter" src="./View/img/logo-twitt.png" title="sigueme en Twitter" />@ArgenisContrer6
-				</section>
-			</section>
+				<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',7);
+			 		 foreach ($misImagenes as $imagen) { ?>
+				
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>"/>				
 
-			<section class="col-xs-12 col-sm-3 col-md-3">
-				<section class="item-redes-sociales">
-					<a href="https://www.youtube.com/user/1122396515" target="_blank">
-						<img alt="sigueme en youtube" src="./View/img/logo-youtube.png" title="sigueme en YouTube" />Argenis Contreras 
-					</a>
-				</section>
+				<?php } ?>
+
+			 	<?php $misDatos = $Objeto->seleccionar('contacto','id',4);
+			 		foreach ($misDatos as $datos) {
+
+			 		 echo $datos['nomb_usu'];
+			 		}
+			 	
+ 				?>
 			</section>
 		</section>
+
+		<section class="col-xs-12 col-sm-3 col-md-3">
+			<section class="item-redes-sociales">
+				<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',8);
+			 		 foreach ($misImagenes as $imagen) { ?>
+				
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>"/>				
+
+				<?php } ?>
+
+			 	<?php $misDatos = $Objeto->seleccionar('contacto','id',5);
+			 		foreach ($misDatos as $datos) {
+
+			 		 echo $datos['nomb_usu'];
+			 		}
+			 	
+ 				?>
+			</section>
+		</section>
+
+		<section class="col-xs-12 col-sm-3 col-md-3">
+			<section class="item-redes-sociales">
+				<?php $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',9);
+			 		 foreach ($misImagenes as $imagen) { ?>
+				
+					<img src="View/img/<?php echo $imagen['nombre_imagen'] ?>"/>				
+
+				<?php } ?>
+
+			 	<?php $misDatos = $Objeto->seleccionar('contacto','id',6);
+			 		foreach ($misDatos as $datos) {
+
+			 		 echo $datos['nomb_usu'];
+			 		}
+			 	
+ 				?>
+				
+			</section>
+		</section>
+
 	</section>
-
-	<!-- FIN REDES SOCIALES -->
-
-	<!-- INICIO FORM CONTACTO -->
-
-	<section class="row form-contacto">
-		<section class="col-md-3 col-xm-12 col-ms-3"></section>
-
-		<section class="col-md-6 col-xs-12 col-ms-6">
-			<h3 class="fuente-playfair text-center">Si quieres mas informacion no dudes en escribirme.</h3>
-
-			<form action="envioCorreo.php" method="post" role="form">&nbsp;
-				<section class="nota text-left">
-					<p class="fuente-playfair">Los campos con <span class="obligatorio"> * </span> son obligatorios.</p>
-				</section>
-
-				<section class="row form-group">
-					<h4><label class="fuente-playfair" for="nombre">Nombre<span class="obligatorio"> *</span></label></h4>
-					<input class="form-control" id="nombre" name="nombre" required="" type="text" />
-				</section>
-
-				<section class="form-group">
-					<h4><label class="fuente-playfair" for="email">Email<span class="obligatorio"> *</span></label></h4>
-					<input class="form-control" id="email" name="email" required="" type="text" />
-				</section>
-
-				<section class="form-group">
-					<h4><label class="fuente-playfair" for="asunto">Asunto<span class="obligatorio"> *</span></label></h4>
-					<input class="form-control" id="asunto" name="asunto" required="" type="text" />
-				</section>
-
-				<section class="form-group">
-					<h4><label class="fuente-playfair" for="mensaje">Mensaje<span class="obligatorio"> *</span></label></h4>
-					<textarea class="form-control" cols="30" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required="" rows="10"></textarea>
-				</section>
-
-				<section class="nota text-center">
-					<p class="fuente-playfair">La informaci&oacute;n aqu&iacute; suministrada se podra utilizar para fines informativo de nuevos productos musicales y/o informaci&oacute;n general relacionada con Argenis Contreras.</p>
-				</section>
-				<button class="enviar btn btn-primary fuente-playfair" type="submit">Enviar a Argenis</button>
-			</form>
-		</section>
-
-		<section class="col-md-3 col-xm-12 col-ms-3"></section>
-	</section>
-
-	<!-- FIN FORM CONTACTO -->
-
 
 </section>
 
-<!-- FIN CONTENIDO PRINCIPAL -->
+<!-- 	SECCCIONDE FORM-CONTACTO -->
+
+<section class="row form-contacto">
+<section class="col-md-3 col-xm-12 col-ms-3"></section>
+
+<section class="col-md-6 col-xs-12 col-ms-6">
+<h3 class="fuente-playfair text-center">Si quieres mas informacion no dudes en escribirme.</h3>
+
+<form action="envioCorreo.php" method="post" role="form">&nbsp;
+<section class="nota text-left">
+<p class="fuente-playfair">Los campos con <span class="obligatorio"> * </span> son obligatorios.</p>
+</section>
+
+<section class="row form-group">
+<h4><label class="fuente-playfair" for="nombre">Nombre<span class="obligatorio"> *</span></label></h4>
+<input class="form-control" id="nombre" name="nombre" required="" type="text" /></section>
+
+<section class="form-group">
+<h4><label class="fuente-playfair" for="email">Email<span class="obligatorio"> *</span></label></h4>
+<input class="form-control" id="email" name="email" required="" type="text" /></section>
+
+<section class="form-group">
+<h4><label class="fuente-playfair" for="asunto">Asunto<span class="obligatorio"> *</span></label></h4>
+<input class="form-control" id="asunto" name="asunto" required="" type="text" /></section>
+
+<section class="form-group">
+<h4><label class="fuente-playfair" for="mensaje">Mensaje<span class="obligatorio"> *</span></label></h4>
+<textarea class="form-control" cols="30" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required="" rows="10"></textarea></section>
+
+<section class="nota text-center">
+<p class="fuente-playfair">La informaci&oacute;n aqu&iacute; suministrada se podra utilizar para fines informativo de nuevos productos musicales y/o informaci&oacute;n general relacionada con Argenis Contreras.</p>
+</section>
+<button class="enviar btn btn-primary fuente-playfair" type="submit">Enviar a Argenis</button></form>
+</section>
+
+<section class="col-md-3 col-xm-12 col-ms-3"></section>
+</section>
 
 <?php include_once ("View/footer.php"); ?>
 

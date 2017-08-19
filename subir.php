@@ -47,8 +47,6 @@ $Objeto = new procesarDatos();
 <?php error_reporting(E_ALL ^ E_NOTICE);
 
 	  $id = $_GET['id'];
-	 
-
 
  ?>
 	<section class="col-md-10 panel-edicion">

@@ -7,7 +7,7 @@ $objeto = new procesarDatos();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Document</title> 
 
 </head>
 <body>
@@ -17,7 +17,13 @@ $objeto = new procesarDatos();
 
 if (isset($_GET['id'])) { 
 
+	//Borrar de la carpeta del servidor
+	$objeto->borrarImagenServidor($_GET['id']);
+
+	//Borrar de la base de datos
 	$objeto->eliminarGaleria($_GET['id']);
+
+	
 	header("location:editar-galeria.php");
 	
 

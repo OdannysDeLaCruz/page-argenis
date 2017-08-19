@@ -24,12 +24,12 @@ elseif ($resultado == 3)
 elseif ($resultado == 4)
 {
 	
-	header("location:../View/errorSubirImagen.php");
+	header("location:../View/errorSubirGaleria.php");
 }
 elseif ($resultado == 5)
 {
 	
-	header('location:../View/excelenteGaleria.php');
+	header('location:../editar-galeria.php');
 	$objeto->insertarGaleria($imagen);
 }
 elseif ($resultado == 6)

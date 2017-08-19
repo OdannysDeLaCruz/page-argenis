@@ -24,7 +24,7 @@ $Objeto = new procesarDatos();
 		<h5>Admin</h5> <span class="glyphicon glyphicon-chevron-down"></span>
 	</section>
 </section>
-<!-- SECCION PANEL-CONTROL -->
+<!-- SECCION PANEL-CONTROL --> 
 <section class="row panel-control">
 			
 	<nav class="menu-panel-control">
@@ -63,8 +63,9 @@ $Objeto = new procesarDatos();
 
 	<section class="galeria">
 
+
 	<?php  
-		
+
 		$imagenes = $Objeto->seleccionarImagen('galeria',null);
 
 		foreach ($imagenes as $imagen) { ?>

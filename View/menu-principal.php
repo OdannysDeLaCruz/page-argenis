@@ -1,7 +1,7 @@
 
 <nav>
 	<input type="checkbox" class="checkbox-btn-menu" id="btn-menu">
-	<label for="btn-menu" class="glyphicon glyphicon-align-right"></label>
+	<label for="btn-menu" class="glyphicon glyphicon-align-right"><span class="text-menu">Menú</span></label>
 		<ul class="ul-menu">
 			<li class="navegacion">
 				<a href="index.php">Inicio</a>
@@ -21,12 +21,9 @@
 			<li class="navegacion">
 				<a href="#contacto">Contacto</a>
 			</li>
-			<!-- <li class="navegacion">
-				<a href="galeria.php">Galería</a>
-			</li> -->
-			<!-- <li class="navegacion">
-				<a href="">Tienda</a>
-			</li> -->
+			<li class="navegacion">
+				<a href="View/galeria.php">Galería</a>
+			</li>
 		</ul>		
 	</nav>
 

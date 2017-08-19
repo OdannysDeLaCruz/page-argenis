@@ -90,17 +90,15 @@ class procesarDatos extends Conexion {
 		$sentencia->closeCursor();
 
 	}
-
+	//Subir imagen a la carpeta (img) del servidor antes de subir a la base de datos
 	public function subirImg($imagen_nombre,$imagen_tamano,$imagen_tipo,$imagen_tmp,$imagen_error)
 	{
-
 		if ((isset($imagen_nombre) && ($imagen_error == UPLOAD_ERR_OK))) 
 		{
 			$error = 5; //Exitoso
 
 			if ($imagen_tamano <= 5000000) 
 			{
-
 				if ($imagen_tipo == "image/jpeg" || $imagen_tipo == "image/jpg" || $imagen_tipo == "image/png") 
 				{
 				
@@ -117,15 +115,12 @@ class procesarDatos extends Conexion {
 				else
 				{
 					return $error = 6; //tipo de archivo erroneo
-				}
-
-				
+				}				
 			}
 			else
 			{
 				return $error = 7;//Tamaño de archivo excedido
 			}
-
 		}
 
 		elseif ($imagen_error)
@@ -133,7 +128,6 @@ class procesarDatos extends Conexion {
 			switch ($imagen_error) 
 
 			{
-
 				case 1:	//El fichero subido excede la directiva upload_max_filesize de php.ini.
 
 					// echo "El fichero subido excede el tamaño permitido.";
@@ -156,25 +150,21 @@ class procesarDatos extends Conexion {
 					// echo "No se subió ningún fichero.";
 					return $imagen_error;
 					break;
-
 			}
 		}
 	}
 
+	//Subir imagen a la carpeta (galeria) del servidor antes de subir a la base de datos
 	public function subirGaleria($imagen_nombre,$imagen_tamano,$imagen_tipo,$imagen_tmp,$imagen_error)
 	{
-
-
 		if ((isset($imagen_nombre) && ($imagen_error == UPLOAD_ERR_OK))) 
 		{
 			$error = 5; //Exitoso
 
 			if ($imagen_tamano <= 5000000) 
 			{
-
 				if ($imagen_tipo == "image/jpeg" || $imagen_tipo == "image/jpg" || $imagen_tipo == "image/png") 
-				{
-				
+				{				
 					$destino_de_ruta = '../View/img/galeria/';
 					//ruta de la carpeta destino en servidor
 
@@ -189,7 +179,6 @@ class procesarDatos extends Conexion {
 				{
 					return $error = 6; //tipo de archivo erroneo
 				}
-
 				
 			}
 			else
@@ -202,9 +191,7 @@ class procesarDatos extends Conexion {
 		elseif ($imagen_error)
 		{
 			switch ($imagen_error) 
-
 			{
-
 				case 1:	//El fichero subido excede la directiva upload_max_filesize de php.ini.
 
 					// echo "El fichero subido excede el tamaño permitido.";
@@ -227,22 +214,41 @@ class procesarDatos extends Conexion {
 					// echo "No se subió ningún fichero.";
 					return $imagen_error;
 					break;
-
 			}
 		}
 	}
-	public function actualizarImg($imagen,$id)
-	{
-
-		$sql = "UPDATE imagenes_cargadas SET nombre_imagen=:nombre_imagen WHERE id=:id";
+	//Borrar la imagen de la carpeta (galeria) del servidor antes de eliminar de la base de datos
+	public function borrarImagenServidor($id)
+	{	
+		$sql = "SELECT imagen FROM galeria WHERE id = :id";
 		$sentencia = $this->conn->prepare($sql);
-		$sentencia->execute(array(":nombre_imagen"=>$imagen,":id"=>$id));
+		$sentencia->bindParam(':id',$id);
+		$sentencia->execute();
 
-		//Cerrar el cursor de la tabla virtual
+		$imagen = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
 		$sentencia->closeCursor();
 
+		// return $datos;
+
+
+		foreach ($imagen as $img) {
+
+			$destino_de_ruta = 'View/img/galeria/';
+			
+			if (unlink($destino_de_ruta.$img['imagen']))
+			{
+				echo "Exito";
+			}
+			else
+			{
+				echo "Error";
+			}
+
+		}
 	}
 
+	//Insertar imagen a la base datos
 	public function insertarGaleria($imagen)
 	{
 		$sql = "INSERT INTO galeria (imagen) VALUES (:imagen)";
@@ -253,6 +259,7 @@ class procesarDatos extends Conexion {
 		$sentencia->closeCursor();
 	}
 
+	//Eliminar el (nombre) de la imagen de la base de datos segun su id
 	public function eliminarGaleria($id)
 	{
 		$sql = "DELETE FROM galeria WHERE id=:id";
@@ -262,6 +269,18 @@ class procesarDatos extends Conexion {
 		$sentencia->closeCursor();
 	}
 
+	//Actualizar el (nombre) de la imagen de secciones y logos de redes sociales en la base de datos
+	public function actualizarImg($imagen,$id)
+	{
+		$sql = "UPDATE imagenes_cargadas SET nombre_imagen=:nombre_imagen WHERE id=:id";
+		$sentencia = $this->conn->prepare($sql);
+		$sentencia->execute(array(":nombre_imagen"=>$imagen,":id"=>$id));
+
+		//Cerrar el cursor de la tabla virtual
+		$sentencia->closeCursor();
+	}
+	//Seleccionar el (nombre) de la imagen de una (tabla) segun su id,
+	//Si no se le envia un id, se seleccionan todos los datos de la tabla
 	public function seleccionarImagen($tabla,$id)
 	{
 		if ($id != null)

@@ -86,31 +86,31 @@ $misDatos = $Objeto->seleccionar('contenido','id_c',1);
 $misVideos = $Objeto->seleccionarVideos(1);
  ?>
  				
-					<section class="row videos-header text-center">
- 						<?php foreach ($misVideos as $videos) { ?>
-						
-							<section class="col-md-6">
-								<input type="text" class="titulo-video-header-1 form-control" name="titulo-video-header-1" value="<?php echo $videos['titulo']; ?>"><br>
+		<section class="row videos-header text-center">
+				<?php foreach ($misVideos as $videos) { ?>
+			
+				<section class="col-md-6">
+					<input type="text" class="titulo-video-header-1 form-control" name="titulo-video-header-1" value="<?php echo $videos['titulo']; ?>"><br>
 
-								<textarea name="url-video-header-1" class="url-video url-video-header-1 form-control"  cols="30" rows="4"><?php echo $videos['url']; ?></textarea>
-							
-							</section>
- 						<?php } ?>
+					<textarea name="url-video-header-1" class="url-video url-video-header-1 form-control"  cols="30" rows="4"><?php echo $videos['url']; ?></textarea>
+				
+				</section>
+				<?php } ?>
 
 <?php 
 $misVideos = $Objeto->seleccionarVideos(2);
  ?>
- 						<?php foreach ($misVideos as $videos) { ?>
+				<?php foreach ($misVideos as $videos) { ?>
 
-							<section class="col-md-6">
-								<input type="text" class="titulo-video-header-2 form-control" name="titulo-video-header-2" value="<?php echo $videos['titulo']; ?>"><br>
-								<textarea name="url-video-header-2" class="url-video url-video-header-2 form-control"  cols="30" rows="4"><?php echo $videos['url']; ?></textarea>
+				<section class="col-md-6">
+					<input type="text" class="titulo-video-header-2 form-control" name="titulo-video-header-2" value="<?php echo $videos['titulo']; ?>"><br>
+					<textarea name="url-video-header-2" class="url-video url-video-header-2 form-control"  cols="30" rows="4"><?php echo $videos['url']; ?></textarea>
 
-							</section>
+				</section>
 
-						<?php } ?>						
-			
-					</section>
+			<?php } ?>						
+
+		</section>
 <!-- Obetener imagenes de secciones -->
 <?php 
 $misImagenes = $Objeto->seleccionarImagen('imagenes_cargadas',1);
@@ -664,7 +664,7 @@ $misDatos = $Objeto->seleccionar('contacto','id',2);
 				</section>
 			</footer>
 
-			<input type="submit" value="Enviar" class="btn btn-primary btn-enviar">
+			<input type="submit" value="Guardar" class="btn btn-primary btn-enviar">
 			
 		</form> <!--FIN FORMULARIO DENTRO DE PANEL DE EDICION -->
 		

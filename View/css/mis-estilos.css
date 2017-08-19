@@ -13,16 +13,6 @@ font-family: 'Merriweather', serif;
 font-family: 'Playfair Display', serif;
 font-family: 'Playfair Display', serif;*/
 
-
-body {
-	background-image: url("../img/imagen-header.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
-	/*background-position:0 -100px;*/
-	z-index: 1;
-}
-
 .row {
 	margin-left: 0;
 	margin-right: 0;
@@ -30,6 +20,24 @@ body {
 header {
 	width: 100%;
 	height: 800px;
+}
+.fondo-header {
+	position: fixed;
+	z-index: -999;
+	width: 100%;	
+	top: -50px;
+}
+@media (min-width: 300px) and (max-width: 700px) {
+	.fondo-header {
+		width: 1000px;
+		left: -200px;
+	}
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+	.fondo-header {
+		width: 1300px;
+		left: -200px;
+	}
 }
 header .titulo {
 	width: 100%;
@@ -71,11 +79,12 @@ header .titulo {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 100;
+	z-index: 9999;
 	padding: 5px 10px 5px 0px;
 	margin-top: 0;
 	background: rgba(0,0,0,0.9);
 	width: 100%;
+	height: 40px;
 } 
 .contacto img {
 	width: 30px;
@@ -95,6 +104,7 @@ label.glyphicon {
 	cursor: pointer;
 	display: none;
 }
+
 nav {
 	background: #15aabf;
 	width: 100%;
@@ -146,10 +156,15 @@ nav ul .menu-mobile p {
 @media (max-width: 1000px) {
 	
 	label.glyphicon {
-		display: block;
+		display: flex;
+		flex-direction:row-reverse; 
 		margin-right: 10px;
 		line-height: 50px;
 		padding: 0;
+	}
+	.text-menu {
+		font-size: 20px;
+		margin-right: 10px;
 	}
 	nav {
 		position: absolute;
@@ -187,20 +202,9 @@ nav ul .menu-mobile p {
 }
 /******************************************/
 
-.foto-flotante {
-	width: 440px;
-	position: absolute;
-	top: 130px;
-	right:0;
-}
-.foto-flotante img {
-	width: 440px;
-	position: relative;
-	float: right;
-}
 .separador1 {
 	width: 90%;
-	margin-right: 0px;
+	text-align: center;
 	background: #fff;
 }
 .separador2 {
@@ -231,31 +235,35 @@ header {
 .titulo-subtitulo {
 	padding-left : 0;
 	padding-right: 0;
-	margin-right : 10px;
-	margin-left  : 10px;
+	margin-right : 0;
+	margin-left  : 0;
 }
-.contenido-principal {
-	background: #fff;
-}
-.presentacion-formatos {
-	text-align: center;
-	margin-bottom: 30px;
-}
+
 .videos-bienvenidas section {
 	margin-top: 40px;
 	border-bottom: 1px solid #fff;	
 }
+.presentacion-formatos {
+	background: #fff;
+	text-align: center;
+	padding-bottom: 30px;
+}
 .seccion-obciones {
 	background: #464FFC;
-	padding-top: 100px;
+
+	/*padding-top: 100px;*/
 }
+
+/*Estilos de seccion 5 musicos*/
+
 .contenedor-img-cinco-musicos {
-	padding: 0px;
-	background: url("../img/tarifa-cinco-musicos-3.png");
-	background-repeat: no-repeat;
-	background-size: cover;
 	height: 500px;
+	padding: 0;
 	position: relative;
+}
+.imagenes-fondos {
+	width: 100%;
+	height: 100%;
 }
 .capa-cinco-musicos{
 	background: blue;
@@ -277,13 +285,11 @@ header {
 .capa-cinco-musicos:hover{
 	opacity: 0.6;
 }
-
 .texto-cinco-musicos {
 	position: absolute;
 	z-index: 10;
 	margin: auto;
 	width: 100%;
-	height: 300px;
 	top: 100px;
 }
 .texto-cinco-musicos h1 {
@@ -310,14 +316,26 @@ header {
 }
 /********** GRUPO COMPLETO ************/
 
-.seccion-obciones.grupo-completo {
+.grupo-completo {
 	background: #c2255c;
+}
+
+
+@media (min-width: 300px )  and (max-width:766px ){
+	
+	.grupo-completo {
+		background: #c2255c;
+		display: flex;
+		flex-direction: column-reverse;
+		margin-top: 0;
+	}
+	.seccion-obciones {
+		padding-top: 0;
+		padding-bottom: 100px;
+	}
 }
 .contenedor-img-grupo-completo {
 	padding: 0px;
-	background: url("../img/tarifa-grupo-completo.png");
-	background-repeat: no-repeat;
-	background-size: cover;
 	height: 500px;
 	position: relative;
 }
@@ -374,14 +392,11 @@ header {
 }
 
 /********* VALLENATO GUITARRA *******/
-.seccion-obciones.vallenato-guitarra {
+.vallenato-guitarra {
 	background: #be4bdb;
 }
 .contenedor-img-vallenato-guitarra {
 	padding: 0px;
-	background: url("../img/tarifa-vallenato-guitarra.png");
-	background-repeat: no-repeat;
-	background-size: cover;
 	height: 500px;
 	position: relative;
 }
@@ -441,16 +456,12 @@ header {
 /******* NUESTROS TEMAS *******/
 
 .mas-videos {
-	background: url("../img/fondo-instrumentos.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
 	height: 300px;
 	width: 100%;
-	margin-bottom: 100px;
 	margin-left: 0px;
 	margin-right: 0px;
 }
+
 .capa-mas-videos {
 	width: 100%;
 	height: 300px;
@@ -459,9 +470,7 @@ header {
 	position: absolute;
 	z-index: 40;
 }
-.videos {
-	margin-bottom: 50px;
-}
+
 .container {
 	margin-left: 0;
 	margin-right: 0;
@@ -469,9 +478,19 @@ header {
 }
 
 .contenedor-videos {
+	background: #fff;
 	margin: auto;
-	margin-bottom: 20px;
+	padding:20px 0 20px 0;
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+.items-videos-temas {
+	text-align: center;
+	width: 300px;
+	margin: 20px;
 }
 .contenedor-videos > .col-md-6,
 .contenedor-videos > .col-sm-6,
@@ -506,9 +525,14 @@ header {
 
 .papel-roto img {
 	width: 100%;
+	background: #fff;
 }
 .banner-comentarios {
 	height: auto;
+	background: #fff;
+}
+.opinion-clientes {
+	background: #fff;
 }
 .opinion-clientes h1 {
 	text-align: center;
@@ -594,8 +618,10 @@ header {
 /******** SECCTION DE REDES SOCIALES ******/
 
 .redes-sociales {
+	background: #fff;
 	padding-top: 100px;
 	text-align: center;
+	padding-bottom: 30px;
 }
 .redes-sociales h3 {
 	margin-bottom: 50px;
@@ -624,7 +650,6 @@ header {
 	background: #5252D9;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	margin-top: 30px;
 
 }
 
@@ -770,8 +795,10 @@ header h4 {
 		line-height: 150px;
 	}
 	.titulos {
-		font-size: 45px;
-		margin-top: 40px;
+		font-size: 40px;
+	}
+	.subtitulos {
+		font-size: 10px;
 	}
 	.texto-descripcion {
 		font-size: 17px;
@@ -786,7 +813,10 @@ header h4 {
 	.texto-descripcion > span {
 		font-size: 40px;
 	}
-	.subtitulos {
+	.presentacion-formatos h2 {
+		font-size: 30px;	
+	}
+	.url {
 		font-size: 18px;
 	}
 	.mas-videos h2 {
@@ -794,7 +824,7 @@ header h4 {
 		line-height: 150px;
 	}
 	header h1 {
-		font-size: 60px;
+		font-size: 40px;
 		text-align: center;
 	}
 	header h4 {

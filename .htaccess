@@ -1,0 +1,3 @@
+Redirect /galeria http://argeniscontrerasvallenato.com/vista/galeria.php
+Redirect /vista http://argeniscontrerasvallenato.com
+ErrorDocument 404 /error404.html

@@ -25,6 +25,23 @@ class procesarDatos extends Conexion {
 		//Cerrar conexion
 		$this->conn = null;
 	}
+	public function selectUsuario()
+	{
+		$sql = "SELECT * FROM admin";
+		$sentencia = $this->conn->prepare($sql);
+		$sentencia->execute(array());
+
+		// //Almacenar el array en resultado
+		$misDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+		// //Cerrar el cursor de la tabla virtual
+		$sentencia->closeCursor();
+
+		return $misDatos;
+
+		//Cerrar conexion
+		$this->conn = null;
+	}
 	
 	public function seleccionarVideos($id_v)
 	{

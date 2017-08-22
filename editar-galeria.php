@@ -1,4 +1,12 @@
 <?php 
+
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+	header('location:admin/index.php');
+}
+else { 
+
 include_once('Model/procesarDatosModel.php');
 $Objeto = new procesarDatos();
 
@@ -17,12 +25,21 @@ $Objeto = new procesarDatos();
 <body>
 <section class="bloque_administracion">
 	
-	<figure class="img-admin">
-		<img src="View/img/fondo-header-2.jpg" alt="Img-Admin">
-	</figure>
+		
 	<section class="menu">
-		<h5>Admin</h5> <span class="glyphicon glyphicon-chevron-down"></span>
+		<h5 class="items-menu">Bienvenido <?php echo $_SESSION['usuario']; ?></h5>
+
+		<div class="items-menu btn-salir">
+		<a href="admin/cerrar_sesion.php">
+		
+			Salir
+			<span class="glyphicon glyphicon-log-out"></span>
+		</a>
+			
+		</div>
+
 	</section>
+
 </section>
 <!-- SECCION PANEL-CONTROL --> 
 <section class="row panel-control">
@@ -90,3 +107,5 @@ $Objeto = new procesarDatos();
 
 </body>
 </html>
+
+<?php } ?>

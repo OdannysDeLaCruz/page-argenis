@@ -1,16 +1,20 @@
 <?php 
 
-$destino = "el_odanis321@hotmail.com";
+$destino = "ingargenis@hotmail.com";
 $email   = $_POST['email'];
-$nombre  = $_POST['nombre'];
-$asunto  = $_POST['asunto'];
-$mensaje = $_POST['mensaje'];
+$nombre  = utf8_decode($_POST['nombre']);
+$asunto  = utf8_decode($_POST['asunto']);
+$mensaje = utf8_decode($_POST['mensaje']);
 
-$mensaje = "<p>" . $mensaje . "<\p>";
+$mensaje = wordwrap($mensaje, 70, "\r\n");
 
-$contenido = "De:" . $email . "\nNombre: " . $nombre . "\nAsunto: " . $asunto . "\nMensaje: " . $mensaje;
+$contenido = "\nNombre: " . $nombre . "\nAsunto: " . $asunto . "\nMensaje: " . $mensaje;
 
-if (mail($destino, $asunto, $contenido)) {	
+$cabeceras = 'From: argenisc@host2.planetahosting.com.co'  . "\r\n" .
+    'Reply-To: ' . $email . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+if (mail($destino, $asunto, $contenido,$cabeceras)) {	
 
 	header("Location: mensaje.html");	
 }

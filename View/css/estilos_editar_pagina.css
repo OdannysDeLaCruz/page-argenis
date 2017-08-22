@@ -24,34 +24,32 @@ html, body {
 	z-index: 999;
 }
 
-.bloque_administracion .img-admin {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	display: inline-block;
-	overflow: hidden;
-	margin: 4px 10px 4px 0;
-	text-align: center;
-}
-.bloque_administracion img {
-	width: 100%;
-	height: 100%;
-}
 .menu {
-	float: right;
-	width: 80px;
-	height: 40px;
-	margin: 5px 0 4px 0;
-	line-height: 40px;
+	display: flex;
+	justify-content: flex-end;
+}
+.items-menu {
+	align-self: center;
+}
+.menu h5::after {
+	content: '';
+	margin-left: 10px;
+	border:1px solid #fff;
 }
 .bloque_administracion h5 {
 	color: #fff;
-	display: inline-block;
-	margin-right: 10px;
+	font-family: arial-black;
+	font-size: 19px;
+	margin-right: 20px;
 }
-.glyphicon-chevron-down {
+.btn-salir a {
+	font-size: 19px;
 	color: #fff;
-	font-size: 13px;
+	font-family: arial-black;
+}
+.glyphicon-log-out {
+	color: #fff;
+	font-size: 17px;
 }
 
 .contenido_principal {

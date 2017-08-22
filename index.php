@@ -24,7 +24,6 @@ foreach ($misImagenes as $imagen) { ?>
 <?php } ?>
 <!-- Numeros de telefonos de contacto -->
 
-
 	<section class="capa-oscura"></section>
 	<section class="row contacto text-right">
 		<img alt="Whatsapp" src="View/img/logo-whatsapp.png" />
@@ -44,8 +43,6 @@ foreach ($misImagenes as $imagen) { ?>
 		foreach ($misDatos as $datos){ 
 		echo $datos['tel']; 
  } ?>
-
-		<!-- Bogota, Dc (+57) 300 616 5561 - 320 230 26 50 -->
 
 		</p>
 	</section>
@@ -87,32 +84,32 @@ foreach ($misDatos as $datos) { ?>
 	<section class="videos-bienvenidas">
 
 <!-- VIDEOS DEL HEADER -->
-<!-- <?php //$misVideos = $Objeto->seleccionarVideos(1); ?>
+<?php $misVideos = $Objeto->seleccionarVideos(1); ?>
 
-	<?php //foreach ($misVideos as $videos) { ?>
+	<?php foreach ($misVideos as $videos) { ?>
 
 		<section class="col-md-6 col-sm-6 col-xs-12 text-center">
 
-			<?php //echo $videos['url'] ?>
+			<?php echo $videos['url'] ?>
 
-			<h3 class="fuente-playfair"><?php //echo $videos['titulo'] ?></h3>
+			<h3 class="fuente-playfair"><?php echo $videos['titulo'] ?></h3>
 		</section>
-	<?php //} ?>
+	<?php } ?>
 
-<?php //$misVideos = $Objeto->seleccionarVideos(2); ?>
+<?php $misVideos = $Objeto->seleccionarVideos(2); ?>
 	
-	<?php //foreach ($misVideos as $videos) { ?>
+	<?php foreach ($misVideos as $videos) { ?>
 
 		<section class="col-md-6 col-sm-6 col-xs-12 text-center">
 
-			<?php //echo $videos['url'] ?>
+			<?php echo $videos['url'] ?>
 
-			<h3 class="fuente-playfair"><?php //echo $videos['titulo'] ?></h3>
+			<h3 class="fuente-playfair"><?php echo $videos['titulo'] ?></h3>
 		</section>
 
-	<?php //} ?>
+	<?php } ?>
 
-	</section> -->
+	</section> 
 </section>
 
 </header>
@@ -624,7 +621,7 @@ foreach ($misDatos as $datos) { ?>
 <section class="col-md-6 col-xs-12 col-ms-6">
 <h3 class="fuente-playfair text-center">Si quieres mas informacion no dudes en escribirme.</h3>
 
-<form action="envioCorreo.php" method="post" role="form">&nbsp;
+<form action="View/envioCorreo.php" method="post" role="form">&nbsp;
 <section class="nota text-left">
 <p class="fuente-playfair">Los campos con <span class="obligatorio"> * </span> son obligatorios.</p>
 </section>

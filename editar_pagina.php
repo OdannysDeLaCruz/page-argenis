@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
@@ -11,9 +10,8 @@ include_once('Model/procesarDatosModel.php');
 $Objeto = new procesarDatos();
  ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Es">
 <head>
 	<meta charset="UTF-8">
 	<title>Editar pagina Argenis Contreras</title>
@@ -32,8 +30,8 @@ $Objeto = new procesarDatos();
 		<div class="items-menu btn-salir">
 		<a href="admin/cerrar_sesion.php">
 		
-			Salir
 			<span class="glyphicon glyphicon-log-out"></span>
+			Salir
 		</a>
 			
 		</div>

@@ -36,8 +36,8 @@ $Objeto = new procesarDatos();
 		<div class="items-menu btn-salir">
 		<a href="admin/cerrar_sesion.php">
 		
-			Salir
 			<span class="glyphicon glyphicon-log-out"></span>
+			Salir
 		</a>
 			
 		</div>
@@ -64,9 +64,23 @@ $Objeto = new procesarDatos();
 <?php error_reporting(E_ALL ^ E_NOTICE);
 
 	  $id = $_GET['id'];
-
  ?>
 	<section class="col-md-10 panel-edicion">
+
+<?php 
+
+if ($id == 1) {	echo "<h3 style='text-align:center'>Principal</h3>";}
+elseif ($id == 2) { echo "<h3 style='text-align:center'>Cinco Musicos</h3>";}
+elseif ($id == 3) { echo "<h3 style='text-align:center'>Grupo Completo</h3>";}
+elseif ($id == 4) { echo "<h3 style='text-align:center'>Vallenato Con Guitarra</h3>";}
+elseif ($id == 5) { echo "<h3 style='text-align:center'>Mas Temas</h3>";}
+elseif ($id == 6) { echo "<h3 style='text-align:center'>@ArgenisContreraz</h3>";}
+elseif ($id == 7) { echo "<h3 style='text-align:center'>Argenis Contreras</h3>";}
+elseif ($id == 8) { echo "<h3 style='text-align:center'>@ArgenisContrer6</h3>";}
+elseif ($id == 9) { echo "<h3 style='text-align:center'>Argenis Contreras</h3>";}
+
+
+?>
 
 		<form action="Controller/subirImagenController.php" method="post" enctype="multipart/form-data">
 			
@@ -90,7 +104,7 @@ $Objeto = new procesarDatos();
 	<section class="imagenes_subidas">
 		<div class="texto-subidas">
 		
-			<h1 class="item_texto">Imagenes subidas</h1>
+			<h1 class="item_texto">Imagen subida</h1>
 			<hr>
 			
 		</div>
@@ -99,7 +113,7 @@ $Objeto = new procesarDatos();
 
 		<?php  
 		// Mando null, para que me reciba un valor nulo y me mande todas las imagenes, por defecto no es null.
-		$imagenes = $Objeto->seleccionarImagen('imagenes_cargadas',null);
+		$imagenes = $Objeto->seleccionarImagen('imagenes_cargadas',$id);
 		foreach ($imagenes as $imagen) { ?>
 
 		<img class="item_imagen" src="View/img/<?php echo $imagen['nombre_imagen'] ?>">

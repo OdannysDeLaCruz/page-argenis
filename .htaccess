@@ -1,3 +1,8 @@
-Redirect /galeria http://argeniscontrerasvallenato.com/vista/galeria.php
-Redirect /vista http://argeniscontrerasvallenato.com
+Redirect /galeria http://argeniscontrerasvallenato.com/View/galeria.php
+Redirect /galeria.php http://argeniscontrerasvallenato.com/View/galeria.php
+Redirect /View http://argeniscontrerasvallenato.com
+Redirect /index.php http://argeniscontrerasvallenato.com
+Redirect /index.html http://argeniscontrerasvallenato.com
+
+
 ErrorDocument 404 /error404.html

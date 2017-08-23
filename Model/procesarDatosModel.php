@@ -255,7 +255,8 @@ class procesarDatos extends Conexion {
 			
 			if (unlink($destino_de_ruta.$img['imagen']))
 			{
-				echo "Exito";
+				header("location:../editar-galeria.php");
+				
 			}
 			else
 			{
@@ -284,6 +285,7 @@ class procesarDatos extends Conexion {
 		$sentencia->bindParam(':id',$id);
 		$sentencia->execute();
 		$sentencia->closeCursor();
+
 	}
 
 	//Actualizar el (nombre) de la imagen de secciones y logos de redes sociales en la base de datos

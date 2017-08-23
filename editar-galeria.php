@@ -32,8 +32,8 @@ $Objeto = new procesarDatos();
 		<div class="items-menu btn-salir">
 		<a href="admin/cerrar_sesion.php">
 		
-			Salir
 			<span class="glyphicon glyphicon-log-out"></span>
+			Salir
 		</a>
 			
 		</div>
@@ -76,11 +76,13 @@ $Objeto = new procesarDatos();
 
 		</form>
 
+	<div class="row texto-info text-center">
+		<p>Haga clic en la imagen para eliminarla</p>
+	</div>
 	</section>	
 
+
 	<section class="galeria">
-
-
 	<?php  
 
 		$imagenes = $Objeto->seleccionarImagen('galeria',null);

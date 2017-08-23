@@ -9,6 +9,7 @@ Class Conexion{
 	public function Conexion()
 	{
 			try {
+				// $this->conn = new PDO('mysql:host=host2;dbname=argenisc_pagargenis','argenisc','odannys321');
 				$this->conn = new PDO('mysql:host=localhost;dbname=pagargenis','root','');
 
 				$this->conn -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

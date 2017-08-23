@@ -34,8 +34,8 @@ $Objeto = new procesarDatos();
 		<div class="items-menu btn-salir">
 		<a href="admin/cerrar_sesion.php">
 		
-			Salir
 			<span class="glyphicon glyphicon-log-out"></span>
+			Salir
 		</a>
 			
 		</div>

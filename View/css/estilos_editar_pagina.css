@@ -431,7 +431,16 @@ form .btn-enviar {
 .btn-subir-imagen:hover {
 	background: #33C273;
 }
-
+.texto-info {
+	margin-top: 30px;
+	height: 30px;
+	line-height: 30px;	
+}
+.texto-info p {
+	font-weight: bold;
+	font-size: 23px;
+	font-family: arial-black;	
+}
 .galeria {
 	width: 80%;
 	margin: 40px 25px 0 0;
@@ -515,6 +524,16 @@ form .btn-enviar {
 		width: 120px;	
 	}
 	.items {
+		font-size: 16px;
+	}
+	.texto-info p {
+		font-size: 18px;
+	}
+	.bloque_administracion h5,.btn-salir a  {
+		font-size: 15px;
+
+	}
+	.glyphicon-log-out {
 		font-size: 16px;
 	}
 }
@@ -628,8 +647,8 @@ form .btn-enviar {
 }
 .item_imagen {
 	margin: 2px;
-	width: 80px;
-	height: 80px;
+	width: 150px;
+	height: 150px;
 }
 
 /*---------------------------------*/

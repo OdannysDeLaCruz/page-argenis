@@ -12,6 +12,7 @@ $Objeto = new procesarDatos();
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<link rel="stylesheet" href="View/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="View/css/mis-estilos.css"/>
+	<link rel="stylesheet" href="View/css/style_notas.css">
 </head>
 <body>
 <header id="inicio">
@@ -28,8 +29,7 @@ foreach ($misImagenes as $imagen) { ?>
 	<section class="row contacto text-right">
 		<img alt="Whatsapp" src="View/img/logo-whatsapp.png" />
 		<p class="fuente-playfair">
-
-
+			
 		Bogota, Dc (+57) 
 
 <?php $misDatos = $Objeto->seleccionar('contacto','id',1); 
@@ -60,13 +60,18 @@ foreach ($misImagenes as $imagen) { ?>
 foreach ($misDatos as $datos) { ?>
 	<section class="row titulo text-right">
 
-		<section class="col-md-12 col-lg-12 titulo-subtitulo">
-			<h1 class="fuente-oleo-script text-center"><?php echo $datos['titulo'] ?></h1>
+		<section class="col-md-12 col-lg-12 titulo-subtitulo contenedor_notas">
+			<img src="View/img/notas/sol2.png" alt="notas musicales" class="notas sol_header_1">
+			<section class="texto">
+				
+				<h1 class="fuente-oleo-script text-center"><?php echo $datos['titulo'] ?></h1>
 
-			<h4 class="fuente-playfair text-center"><?php echo $datos['subtitulo'] ?></h4>
+				<h4 class="fuente-playfair text-center"><?php echo $datos['subtitulo'] ?></h4>
+			</section>
+			<img src="View/img/notas/sol2.png" alt="notas musicales" class="notas sol_header_2">
 
-			<hr class="separador1" />
 		</section>
+		<hr class="separador1" />
 	</section>
 
 	<section class="row descripcion">
@@ -119,20 +124,23 @@ foreach ($misDatos as $datos) { ?>
 
 	<!-- seccion presentacion de formatos -->
 	<section class="row presentacion-formatos">
-		<section class="col-md-12">
-		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',2);
-			foreach ($misDatos as $datos) { ?>
+		<section>
+			<section class="contenedor_notas">
+				<?php $misDatos = $Objeto->seleccionar('contenido','id_c',2);
+					foreach ($misDatos as $datos) { ?>
+						<img src="View/img/notas/sol3.png" alt="notas musicales" class="notas">
+						<h2 class="fuente-playfair"><?php echo $datos['titulo'] ?></h2>
+						<img src="View/img/notas/sol3.png" alt="notas musicales" class="notas">
 
-			<h2 class="fuente-playfair"><?php echo $datos['titulo'] ?></h2>
-
+			</section>
 			<hr class="separador2" />
 
 			<p class="fuente-playfair"><?php echo $datos['mensaje'] ?></p>
-
 		<?php } ?>
 
 		</section>
 	</section>
+	<section class="fila_notas"></section>
 <!-- *************** 5 Musicos ****************** -->
 
 <section class="row seccion-obciones cinco-musicos" id="cinco-musicos">
@@ -151,27 +159,29 @@ foreach ($misDatos as $datos) { ?>
 
 		<section class="texto-cinco-musicos">
 
-		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',3);
+			<?php $misDatos = $Objeto->seleccionar('contenido','id_c',3);
 			foreach ($misDatos as $datos) { ?>
+				<section class="contenedor_notas">
+					<img src="View/img/notas/nota4.png" alt="" class="notas notas_c_musicos">
+					<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+					<img src="View/img/notas/nota4.png" alt="" class="notas notas_c_musicos">
+				</section>
+				<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
 
-			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
-			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
+				<ul>
+					<?php
+					$listado = explode(":", $datos['mensaje']);
+					foreach ($listado as $listado) { ?>
 
-			<ul>
+						<li class="fuente-playfair"><?php echo $listado; ?></li>
 
-				<?php
-
-				$listado = explode(":", $datos['mensaje']);
-				foreach ($listado as $listado) { ?>
-
-					<li class="fuente-playfair"><?php echo $listado; ?></li>
-
-				<?php } ?>
-
-			</ul>
-
-		<?php } ?>
-
+					<?php } ?>
+				</ul>
+			<?php } ?>
+		</section>
+		<section class="final_seccion">
+			<img src="View/img/notas/fondo-sol.png" class="imagen_final_seccion items-videos">
+			
 		</section>
 	</section>
 
@@ -204,7 +214,6 @@ foreach ($misDatos as $datos) { ?>
 
 			<?php } ?>
 		</div>
-
 	</section>
 </section>
 <!-- ************** Grupo Completo ***************** -->
@@ -236,6 +245,7 @@ foreach ($misDatos as $datos) { ?>
 			<h3 class="fuente-playfair url"><?php echo $videos['titulo'] ?></h3>
 
 		<?php } ?>
+		
 
 	</section>
 
@@ -251,28 +261,35 @@ foreach ($misDatos as $datos) { ?>
 
 		<section class="texto-grupo-completo">
 
-		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',4);
-			foreach ($misDatos as $datos) { ?>
+			<?php $misDatos = $Objeto->seleccionar('contenido','id_c',4);
+				foreach ($misDatos as $datos) { ?>
+					<section class="contenedor_notas">
+						<img src="View/img/notas/nota5.png" alt="" class="notas notas_c_musicos">
+						<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+						<img src="View/img/notas/nota5.png" alt="" class="notas notas_c_musicos">
+					</section>
 
-			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+					<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
+				&nbsp;
 
-			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
-			&nbsp;
+				<ul>
+					<?php
 
-			<ul>
-				<?php
+					$listado = explode(":", $datos['mensaje']);
+					foreach ($listado as $listado) { ?>
 
-				$listado = explode(":", $datos['mensaje']);
-				foreach ($listado as $listado) { ?>
+						<li class="fuente-playfair"><?php echo $listado; ?></li>
 
-					<li class="fuente-playfair"><?php echo $listado; ?></li>
+					<?php } ?>
+					
+				</ul>
 
 				<?php } ?>
-				
-			</ul>
 
-		<?php } ?>
-
+		</section>
+		<section class="final_seccion">
+			<img src="View/img/notas/fondo-sol-2.png" alt="imagenes de notas musicales" class="imagen_final_seccion items-videos">
+			
 		</section>
 	</section>
 </section>
@@ -294,8 +311,11 @@ foreach ($misDatos as $datos) { ?>
 		<?php $misDatos = $Objeto->seleccionar('contenido','id_c',5);
 			foreach ($misDatos as $datos) { ?>
 
-			<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
-
+				<section class="contenedor_notas">
+					<img src="View/img/notas/nota6.png" alt="" class="notas notas_c_musicos">
+					<h1 class="fuente-playfair titulos"><?php echo $datos['titulo'] ?></h1>
+					<img src="View/img/notas/nota6.png" alt="" class="notas notas_c_musicos">
+				</section>
 			<h2 class="fuente-playfair subtitulos"><?php echo $datos['subtitulo'] ?></h2>
 
 			<ul>
@@ -311,6 +331,11 @@ foreach ($misDatos as $datos) { ?>
 
 		<?php } ?>
 
+
+		</section>
+		<section class="final_seccion">
+			<img src="View/img/notas/fondo-sol.png" alt="imagenes de notas musicales" class="imagen_final_seccion items-videos">
+			
 		</section>
 	</section>
 
@@ -344,18 +369,23 @@ foreach ($misDatos as $datos) { ?>
 	</section>
 <!-- ************ Seccion mas videos ************ -->
 
-<section class="row" id="temas">
-	<section class="mas-videos">
+<section class="mas-videos">
 
 	<?php $misDatos = $Objeto->seleccionar('contenido','id_c',6);
-			foreach ($misDatos as $datos) { ?>
 
-		<h2><?php echo $datos['titulo']; ?></h2>
+	foreach ($misDatos as $datos) { ?>
 
-		<section class="capa-mas-videos"></section>
+			<img src="View/img/notas/nota4.png" alt="" class="notas notas_c_musicos">
+
+			<h2><?php echo $datos['titulo']; ?></h2>
+
+			<img src="View/img/notas/nota4.png" alt="" class="notas notas_c_musicos">
+
 	<?php } ?>
-	</section>
+
 </section>
+
+
 <!-- *********************************************** -->
 
 <section class="contenedor-videos">
@@ -517,6 +547,11 @@ foreach ($misDatos as $datos) { ?>
 </section>
 
 <section class="redes-sociales" id="contacto">
+	<section class="contenedor_notas" style="margin-bottom: 20px">
+		<img src="View/img/notas/nota3.png" alt="notas musicales" class="notas">
+		<img src="View/img/notas/nota2.png" alt="notas musicales" class="notas">
+		<img src="View/img/notas/nota1.png" alt="notas musicales" class="notas">
+	</section>
 	<section class="row">
 		<section class="col-md-12 text center">
 			<h3 class="fuente-playfair">Sigueme en</h3>

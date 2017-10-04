@@ -253,7 +253,9 @@ header {
 }
 
 /*Estilos de seccion 5 musicos*/
-
+.cinco-musicos {
+		height: 800px;
+	}
 .contenedor-img-cinco-musicos {
 	height: 500px;
 	padding: 0;
@@ -314,6 +316,7 @@ header {
 
 .grupo-completo {
 	background: #c2255c;
+	height: 800px;
 }
 
 
@@ -390,6 +393,7 @@ header {
 /********* VALLENATO GUITARRA *******/
 .vallenato-guitarra {
 	background: #be4bdb;
+	height: 800px;
 }
 .contenedor-img-vallenato-guitarra {
 	padding: 0px;
@@ -454,16 +458,11 @@ header {
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: space-around;
 }
-.capa-mas-videos {
-	width: 100%;
-	height: 300px;
-	background: #000;
-	opacity: 0.5;
-	position: absolute;
-	z-index: 40;
-}
-
+/*---------------------------*/
 .container {
 	margin-left: 0;
 	margin-right: 0;
@@ -612,7 +611,7 @@ header {
 
 .redes-sociales {
 	background: #fff;
-	padding-top: 100px;
+	padding-top: 50px;
 	text-align: center;
 	padding-bottom: 30px;
 }
@@ -640,7 +639,9 @@ header {
 
 /******SECTION DE FORM-CONTACTO*/
 .form-contacto {
-	background: #5252D9;
+	background: url('../img/fondo_notas.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
@@ -651,6 +652,7 @@ header {
 .form-contacto form label {
 	color: #fff; 
 	font-size: 20px;
+	
 }
 .form-contacto form .obligatorio {
 	color: red;
@@ -659,6 +661,7 @@ header {
 	text-transform: uppercase;
 	color: #fff;
 	font-size: 30px;
+
 }
 .form-contacto .nota p {
 	color: #fff;
@@ -747,11 +750,8 @@ header h4 {
 	color: #fff;
 	font-size: 50px;
 	font-family: 'Playfair Display', serif;
-	line-height: 250px;
-	position: absolute;
-	z-index: 500;
 	text-align: center;
-	width: 100%;
+	align-self: center;
 }
 
 /*------ 	@MEDIAS ------*/
@@ -775,10 +775,6 @@ header h4 {
 	}
 	.mas-videos, .capa-mas-videos {
 		height: 200px;
-	}
-	.mas-videos h2 {
-		font-size: 16px;
-		line-height: 150px;
 	}
 	.titulos {
 		font-size: 40px;
@@ -807,7 +803,6 @@ header h4 {
 	}
 	.mas-videos h2 {
 		font-size: 25px;
-		line-height: 150px;
 	}
 	header h1 {
 		font-size: 40px;

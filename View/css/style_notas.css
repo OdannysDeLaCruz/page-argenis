@@ -1,0 +1,102 @@
+.contenedor_notas {
+	display: flex;
+	justify-content: space-around;
+}
+.texto {margin-bottom: 20px;}
+.notas {
+	width: 100px;
+	height: 130px;
+	align-self: center;
+}
+.notas_c_musicos {
+	width: 50px;
+	height: 50px;
+}
+.fila_notas {
+	background: url('../img/notas/penta.png');
+	background-repeat: repeat-x;
+	background-size: 400px;
+	width: 100%;
+	height: 70px;
+}
+.final_seccion {
+	width: 100%;
+	text-align: center;
+}
+.imagen_final_seccion {
+	width: 200px;
+}
+
+@media (max-width: 480px) {
+	.notas {
+		width: 50px;
+		height: 60px;
+		top: 0;
+	}
+	.notas_c_musicos {
+		width: 50px;
+		height: 50px;
+	}
+	.fila_notas {
+		background-size: 300px;
+		width: 100%;
+		height: 55px;
+	}
+	.final_seccion {
+		width: 100%;
+		text-align: center;
+		margin-top: 800px;
+	}
+	.imagen_final_seccion {
+		width: 120px;
+	}
+	.cinco-musicos,
+	.vallenato-guitarra,
+	.grupo-completo {
+		height: 1600px;
+	}
+	.grupo-completo {
+		justify-content: flex-end;
+	}
+	.seccion-obciones {
+ 	    padding-top: 0px;
+   		padding-bottom: 100px; 
+        margin-top: 0px; 
+     }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+	
+	.notas {
+		width: 80px;
+		height: 100px;
+	}
+	.notas_c_musicos {
+		width: 50px;
+		height: 50px;
+	}
+	.cinco-musicos {
+		height: 1700px;
+	}
+	.grupo-completo {
+		height: 1700px;
+		justify-content: flex-end;
+	}
+	.vallenato-guitarra {
+		height: 1700px;		
+	}
+	.final_seccion {
+		margin-top: 800px;
+	}
+	.seccion-obciones {
+ 	    padding-top: 0px;
+   		padding-bottom: 100px; 
+        margin-top: 0px; 
+     }
+}
+
+@media (min-width: 900px) {
+	.cinco-musicos,
+	.grupo-completo, 
+	.vallenato-guitarra  {
+		height: 90	0px;
+}
